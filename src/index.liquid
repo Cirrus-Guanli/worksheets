@@ -1,0 +1,28 @@
+---
+permalink: /
+layout: base
+---
+
+<div class="table-responsive">
+  <table class="table table-sm table-bordered table-hover">
+    <caption>List of users</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <th scope="row">{{ forloop.index }}</th>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.handle }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
