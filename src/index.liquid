@@ -5,22 +5,61 @@ layout: base
 
 <div class="table-responsive">
   <table class="table table-sm table-bordered table-hover">
-    <caption>List of users</caption>
-    <thead>
+    <caption>330 Outreach Projects (OP) Worksheet</caption>
+    <thead class="thead-light">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col" rowspan="2" class="align-middle">ID</th>
+        <th scope="col" rowspan="2" class="align-middle">Project Name</th>
+        <th scope="col" rowspan="2" class="align-middle">Points per Topic</th>
+        <th scope="col" colspan="6" class="text-center">Topics Covered</th>
+        <th scope="col" colspan="4" class="text-center">PPI Messages</th>
+        <th scope="col" rowspan="2" class="align-middle">Times per Year</th>
+        <th scope="col" rowspan="2" class="align-middle">Count</th>
+        <th scope="col" rowspan="2" class="align-middle">OP</th>
+        <th scope="col" colspan="5" class="text-center">Multipliers</th>
+      </tr>
+      <tr>
+        <th scope="col">Hazard</th>
+        <th scope="col">Insure</th>
+        <th scope="col">People</th>
+        <th scope="col">Property</th>
+        <th scope="col">Build</th>
+        <th scope="col">Natural</th>
+        <th scope="col" class="text-nowrap">Msg 1</th>
+        <th scope="col" class="text-nowrap">Msg 2</th>
+        <th scope="col" class="text-nowrap">Msg 3</th>
+        <th scope="col" class="text-nowrap">Msg 4</th>
+        <th scope="col" class="text-nowrap">PPI?</th>
+        <th scope="col" class="text-nowrap">PPI (OP)</th>
+        <th scope="col" class="text-nowrap">STK?</th>
+        <th scope="col" class="text-nowrap">STK (OP)</th>
+        <th scope="col" class="text-nowrap">OP + PPI + STK</th>
       </tr>
     </thead>
     <tbody>
-      {% for user in users %}
+      {% for project in projects %}
         <tr>
-          <th scope="row">{{ forloop.index }}</th>
-          <td>{{ user.first_name }}</td>
-          <td>{{ user.last_name }}</td>
-          <td>{{ user.handle }}</td>
+          <th class="text-center" scope="row">{{ forloop.index }}</th>
+          <td class="text-nowrap">{{ project.name }}</td>
+          <td class="text-center">{{ project.points_per_topic }}</td>
+          <td class="text-center">{% if project.topic_hazard %}x{% endif %}</td>
+          <td class="text-center">{% if project.topic_insure %}x{% endif %}</td>
+          <td class="text-center">{% if project.topic_people %}x{% endif %}</td>
+          <td class="text-center">{% if project.topic_property %}x{% endif %}</td>
+          <td class="text-center">{% if project.topic_build %}x{% endif %}</td>
+          <td class="text-center">{% if project.topic_natural %}x{% endif %}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
       {% endfor %}
     </tbody>
