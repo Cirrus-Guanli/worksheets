@@ -3,11 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Worksheet Table</title>
+    <title>ISO | 330 Outreach Projects (OP) Worksheet</title>
+    {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> {% endcomment %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Work+Sans&amp;display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <style>
+      :root {
+        --primary_blue: #024774;
+        --ltblue: #f2f8ff;
+        --font-stack: 'work sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      }
+      body {
+        font-family: var(--font-stack);
+      }
+      .bg-nav {
+        background-color: var(--primary_blue);
+      }
+      #brand {
+        gap: 10px;
+      }
+      #brand svg {
+        width: 42px;
+        height: 34px;
+      }
+      #brand h1 {
+        font-size: 1.4rem;
+      }
+      .text-bg-blue {
+        color: #f2f8ff !important;
+      }
+      .navbar .logout-dropdown .rounded-circle {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+      }
+      .text-text-ph {
+        color: rgba(0, 0, 0, 0.42) !important;
+      }
+      .rounded-circle {
+        border-radius: 50% !important;
+      }
+      .bg-bg-blue {
+        background-color: #f2f8ff !important;
+      }
+      .btn-nope {
+        text-shadow: 0 0 0 transparent;
+        background: transparent;
+        border: 0 solid transparent;
+        box-shadow: 0 0 0 transparent;
+      }
+      .navbar .logout-dropdown .rounded-circle .material-icons {
+        margin-top: 3px;
+      }
+      .text-secondary {
+        color: #024774 !important;
+      }
+      .table-hover tbody tr:hover {
+        background-color: #fafad2;
+      }
+      .btn-purple {
+        color: #fff;
+        background-color: #511d9a;
+        border-color: #511d9a;
+      }
+      .table .thead-light th {
+        background-color: var(--ltblue);
+      }
+    </style>
   </head>
   <body>
-    <div class="container mt-2">
+    {% include "header.liquid" %}
+    {% include "subheader.liquid" %}
+    <div class="container mt-3">
       {{ content }}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

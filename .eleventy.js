@@ -1,4 +1,8 @@
-module.exports = function(eleventyConfig) {
+const util = require('util');
+
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("./src/images");
+
   return {
     dir: {
       input: "src",          // Set the input to the "src" directory
