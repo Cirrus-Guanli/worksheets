@@ -3,12 +3,19 @@ permalink: /
 layout: base
 ---
 
+<header>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-sm btn-outline-secondary d-flex" style="gap:0.35rem" data-toggle="modal" data-target="#exampleModal">
+    + Add Project
+  </button>
+</header>
+
 <div class="table-responsive">
-  <table class="table table-sm table-bordered table-hover">
-    <caption>330 Outreach Projects (OP) Worksheet</caption>
+  <table class="table table-sm table-bordered table-hover mb-0">
+    <caption class="sr-only">330 Outreach Projects (OP) Worksheet</caption>
     <thead class="thead-light">
       <tr>
-        <th scope="col" rowspan="2" class="align-middle">ID</th>
+        <th scope="col" rowspan="2" class="text-center align-middle">ID</th>
         <th scope="col" rowspan="2" class="align-middle">Project Name</th>
         <th scope="col" rowspan="2" class="align-middle">Points per Topic</th>
         <th scope="col" colspan="6" class="text-center">Topics Covered</th>
@@ -48,18 +55,18 @@ layout: base
           <td class="text-center">{% if project.topic_property %}x{% endif %}</td>
           <td class="text-center">{% if project.topic_build %}x{% endif %}</td>
           <td class="text-center">{% if project.topic_natural %}x{% endif %}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="text-center">{% if project.msg1 %}x{% endif %}</td>
+          <td class="text-center">{% if project.msg2 %}x{% endif %}</td>
+          <td class="text-center">{% if project.msg3 %}x{% endif %}</td>
+          <td class="text-center">{% if project.msg4 %}x{% endif %}</td>
+          <td class="text-center">{{ project.times_per_year }}</td>
+          <td class="text-center">{{ project.count }}</td>
+          <td class="text-center">{{ project.op }}</td>
+          <td class="text-center">{{ project.ppi? }}</td>
+          <td class="text-center">{{ project.ppi_op }}</td>
+          <td class="text-center">{{ project.stk? }}</td>
+          <td class="text-center">{{ project.stk_op }}</td>
+          <td class="text-center">{{ project.op_ppi_stk }}</td>
         </tr>
       {% endfor %}
     </tbody>
