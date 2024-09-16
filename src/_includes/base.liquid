@@ -16,7 +16,7 @@
         --font-stack: 'work sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
       }
       html {
-        font-size: 16px;
+        font-size: 10px;
       }
       body {
         font-family: var(--font-stack);
@@ -71,6 +71,11 @@
         background-color: #511d9a;
         border-color: #511d9a;
       }
+      .btn-purple:hover, .btn-purple:focus {
+        color: #fff;
+        background-color: #3d1377;
+        border-color: #3d1377;
+      }
       .table .thead-light th {
         background-color: var(--ltblue);
       }
@@ -103,38 +108,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <script>
-        // Function to toggle font size and anchor text
-        function toggleFontSize() {
-            const htmlElement = document.documentElement;
-            const fontToggleLink = document.getElementById('fontToggle');
-            
-            // Check the inline font size directly and toggle between 16px (normal) and 12px (small)
-            if (htmlElement.style.fontSize === '16px') {
-                htmlElement.style.fontSize = '12px';  // Switch to small size
-                fontToggleLink.innerText = 'Switch to Normal Text';  // Update anchor text
-                localStorage.setItem('fontSize', '12px');  // Save user preference
-            } else {
-                htmlElement.style.fontSize = '16px';  // Switch to normal size
-                fontToggleLink.innerText = 'Switch to Small Text';  // Update anchor text
-                localStorage.setItem('fontSize', '16px');  // Save user preference
-            }
+      // Function to toggle font size and anchor text
+      function toggleFontSize() {
+        const htmlElement = document.documentElement;
+        const fontToggleLink = document.getElementById('fontToggle');
+
+        // Check the current font size and toggle between 10px (small) and 16px (normal)
+        if (htmlElement.style.fontSize === '10px') {
+          htmlElement.style.fontSize = '16px';  // Switch to larger size (normal)
+          fontToggleLink.innerText = 'Switch to Small Text';  // Update anchor text
+          localStorage.setItem('fontSize', '16px');  // Save user preference
+        } else {
+          htmlElement.style.fontSize = '10px';  // Switch to small size
+          fontToggleLink.innerText = 'Switch to Normal Text';  // Update anchor text
+          localStorage.setItem('fontSize', '10px');  // Save user preference
         }
+      }
 
-        // On page load, set the font size and anchor text based on saved preferences
-        window.onload = function() {
-            const savedFontSize = localStorage.getItem('fontSize');
-            const fontToggleLink = document.getElementById('fontToggle');
+      // On page load, set the font size and anchor text based on saved preferences
+      window.onload = function () {
+        const savedFontSize = localStorage.getItem('fontSize');
+        const fontToggleLink = document.getElementById('fontToggle');
 
-            // Set font size and toggle link text based on the saved preference
-            if (savedFontSize) {
-                document.documentElement.style.fontSize = savedFontSize;
-                fontToggleLink.innerText = savedFontSize === '12px' ? 'Switch to Normal Text' : 'Switch to Small Text';
-            } else {
-                // Ensure default font size is 16px
-                document.documentElement.style.fontSize = '16px';
-                fontToggleLink.innerText = 'Switch to Small Text';
-            }
-        };
+      // Set font size and toggle link text based on the saved preference
+        if (savedFontSize) {
+          document.documentElement.style.fontSize = savedFontSize;
+          fontToggleLink.innerText = savedFontSize === '10px' ? 'Switch to Normal Text' : 'Switch to Small Text';
+        } else {
+          // Default to small font size (10px) if no preference is saved
+          document.documentElement.style.fontSize = '10px';
+          fontToggleLink.innerText = 'Switch to Normal Text';
+        }
+      };
     </script>
   </body>
 </html>
