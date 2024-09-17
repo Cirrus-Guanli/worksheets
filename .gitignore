@@ -1,5 +1,5 @@
 # build artefacts
-/_site
+_site/
 
 # dev stuff
 _datacache
