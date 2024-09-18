@@ -1,0 +1,45 @@
+---
+permalink: /350Web1/index.html
+layout: base
+title: 350Web1 • Scoring Guide
+---
+
+<div class="table-responsive">
+  <table class="table table-sm table-bordered mb-0">
+    <caption class="sr-only">350 Web1 Scoring Guide</caption>
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Topic</th>
+        <th scope="col">Subtopic</th>
+        <th scope="col">Points</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for topic in topics %}
+      {% assign outerloop = forloop.index %}
+      {% for subtopic in topic.subtopics %}
+        <tr>
+          {% if forloop.first %}
+            <th scope="row" rowspan="{{ topic.subtopics | size }}">{{ topic.name }}</th>
+          {% endif %}
+          <td>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}" value="option{{ forloop.index }}" onchange="toggleRow(this)">
+              <label class="form-check-label" for="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}">{{ subtopic.label }}</label>
+            </div>
+          </td>
+          <td data-subtopic-points="{{ subtopic.points }}" class="text-center">{{ subtopic.points }}</td>
+          <td data-subtopic-subtotal="0" class="text-center">0</td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
+    </tbody>
+    <tfood>
+      <tr>
+        <th scope="row" colspan="3" class="text-right px-2">Total</th>
+        <td id="totalSubtotal" class="text-center">0</td>
+      </tr>
+    </tfood>
+  </table>
+</div>

@@ -94,6 +94,9 @@
         color: #511d9a;
         background-color: white;
       }
+      .highlight {
+        background-color: rgba(241, 231, 254, 0.5);;
+      }
     </style>
   </head>
   <body>
@@ -141,5 +144,31 @@
         }
       };
     </script>
+    {% if page.url == '/350Web1/' %}
+      <script>
+        function toggleRow(checkbox) {
+          const row = checkbox.closest('tr'); // Get the current row
+          const pointsCell = row.querySelector('[data-subtopic-points]'); // Get the 'points' cell
+          const extraCell = row.querySelector('[data-subtopic-subtotal]'); // Get the 'extra' cell
+          const totalSubtotalCell = document.getElementById('totalSubtotal'); // Get the total subtotal cell in the tfoot
+
+          let totalSubtotal = parseInt(totalSubtotalCell.textContent); // Current total
+
+          if (checkbox.checked) {
+            const pointsValue = parseInt(pointsCell.getAttribute('data-subtopic-points')); // Get the points value
+            extraCell.textContent = pointsValue; // Update the 'extra' cell with points value
+            extraCell.classList.add('highlight'); // Add highlight class
+            totalSubtotal += pointsValue; // Add to total subtotal
+          } else {
+            const pointsValue = parseInt(extraCell.textContent); // Get the current subtotal (previously points value)
+            extraCell.textContent = '0'; // Reset the 'extra' cell to 0
+            extraCell.classList.remove('highlight'); // Remove highlight class
+            totalSubtotal -= pointsValue; // Subtract from total subtotal
+          }
+
+          totalSubtotalCell.textContent = totalSubtotal; // Update the total subtotal in the footer
+        }
+      </script>
+    {% endif %}
   </body>
 </html>
