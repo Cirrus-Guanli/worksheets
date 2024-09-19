@@ -6,7 +6,7 @@ title: 350Web1 • Scoring Guide
 
 <div class="table-responsive">
   <table class="table table-sm table-bordered mb-0">
-    <caption class="sr-only">350 Web1 Scoring Guide</caption>
+    <caption class="sr-only">{{ title }}</caption>
     <thead class="thead-light">
       <tr>
         <th scope="col">Topic</th>
@@ -16,7 +16,7 @@ title: 350Web1 • Scoring Guide
       </tr>
     </thead>
     <tbody>
-    {% for topic in topics %}
+    {% for topic in webtopics %}
       {% assign outerloop = forloop.index %}
       {% for subtopic in topic.subtopics %}
         <tr>
@@ -35,11 +35,11 @@ title: 350Web1 • Scoring Guide
       {% endfor %}
     {% endfor %}
     </tbody>
-    <tfood>
+    <tfoot>
       <tr>
         <th scope="row" colspan="3" class="text-right px-2">Total</th>
         <td id="totalSubtotal" class="text-center">0</td>
       </tr>
-    </tfood>
+    </tfoot>
   </table>
 </div>

@@ -1,0 +1,60 @@
+---
+permalink: /510FMP/index.html
+layout: base
+title: 510FMP • Floodplain Management Planning
+---
+
+{% assign alphabet = "abcdefghijklmnopqrstuvwxyz" | split: "" %}
+
+<div class="table-responsive">
+  <table class="table table-sm table-bordered mb-0">
+    <caption class="sr-only">{{ title }}</caption>
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Topic</th>
+        <th scope="col">CRS Step</th>
+        <th scope="col">Max Pts</th>
+        <th scope="col">Section / Page</th>
+        <th scope="col" style="width:10px;">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for topic in fmptopics %}
+      {% assign outerloop = forloop.index %}
+      {% for step in topic.steps %}
+        <tr>
+          {% if forloop.first %}
+            <th scope="row" rowspan="{{ topic.steps | size | plus: 1 }}">Topic {{ outerloop }}: {{ topic.name }}<div class="font-weight-normal text-muted">Maximum points: {{ topic.maxpoints }}</div></th>
+          {% endif %}
+          <td class="align-middle{% if step.is_substep == true %} pl-5{% endif %}">{{ step.label }}</td>
+          <td class="text-center align-middle text-muted">{{ step.points }}</td>
+          <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
+            {%  unless step.has_substeps == true %}
+              <label for="sp_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
+              <input type="text" class="form-control form-control-sm" id="sp_t{{ outerloop }}-s{{ forloop.index }}">
+            {% endunless %}
+          </td>
+          <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
+            {%  unless step.has_substeps == true %}
+              <label for="score_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
+              <input type="text" inputmode="numeric" pattern="[0-{{ step.points }}]+" class="form-control form-control-sm text-center" id="score_t{{ outerloop }}-s{{ forloop.index }}" placeholder="0">
+            {% endunless %}
+          </td>
+        </tr>
+        {% if forloop.last %}
+          <tr>
+            <td colspan="3" class="text-right pr-3 highlight">Topic {{ outerloop }} Subtotal</td>
+            <td class="text-center highlight">0</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="4" class="text-right pr-3">Worksheet Total</th>
+        <td id="totalSubtotal" class="text-center">0</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
