@@ -14,13 +14,14 @@ title: 510FMP • Floodplain Management Planning
         <th scope="col">Topic</th>
         <th scope="col">CRS Step</th>
         <th scope="col">Max Pts</th>
-        <th scope="col">Section / Page</th>
         <th scope="col" style="width:10px;">Score</th>
+        <th scope="col">Section / Page</th>
       </tr>
     </thead>
     <tbody>
     {% for topic in fmptopics %}
       {% assign outerloop = forloop.index %}
+      {% assign formula = formula | append: "T" | append: outerloop %}
       {% for step in topic.steps %}
         <tr>
           {% if forloop.first %}
@@ -29,31 +30,33 @@ title: 510FMP • Floodplain Management Planning
           <td class="align-middle{% if step.is_substep == true %} pl-5{% endif %}">{{ step.label }}</td>
           <td class="text-center align-middle text-muted">{{ step.points }}</td>
           <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
+            {% unless step.has_substeps == true %}
+            <label for="score_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
+            <input type="text" inputmode="numeric" pattern="[0-{{ step.points }}]+"
+              class="form-control form-control-sm text-center" id="score_t{{ outerloop }}-s{{ forloop.index }}" placeholder="0">
+            {% endunless %}
+          </td>
+          <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
             {%  unless step.has_substeps == true %}
               <label for="sp_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
               <input type="text" class="form-control form-control-sm" id="sp_t{{ outerloop }}-s{{ forloop.index }}">
             {% endunless %}
           </td>
-          <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
-            {%  unless step.has_substeps == true %}
-              <label for="score_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
-              <input type="text" inputmode="numeric" pattern="[0-{{ step.points }}]+" class="form-control form-control-sm text-center" id="score_t{{ outerloop }}-s{{ forloop.index }}" placeholder="0">
-            {% endunless %}
-          </td>
         </tr>
         {% if forloop.last %}
           <tr>
-            <td colspan="3" class="text-right pr-3 highlight">Topic {{ outerloop }} Subtotal</td>
-            <td class="text-center highlight">0</td>
+            <td colspan="4" class="font-weight-bold text-right">T{{ outerloop }}: 0</td>
           </tr>
         {% endif %}
       {% endfor %}
+      {% if forloop.last == false %}
+      {% assign formula = formula | append: " + " %}
+      {% endif %}
     {% endfor %}
     </tbody>
     <tfoot>
       <tr>
-        <th scope="row" colspan="4" class="text-right pr-3">Worksheet Total</th>
-        <td id="totalSubtotal" class="text-center">0</td>
+        <th scope="row" colspan="5" class="highlight text-right text-purple">{{ formula }}: 0</th>
       </tr>
     </tfoot>
   </table>
