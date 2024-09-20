@@ -1,5 +1,5 @@
 ---
-title: 330OP • Outreach Projects Worksheet
+title: 330OP • Outreach Projects
 ---
 
 <header>
@@ -43,9 +43,9 @@ title: 330OP • Outreach Projects Worksheet
       </tr>
     </thead>
     <tbody>
-      {% for project in projects %}
+      {% for project in outreachprojects %}
         <tr>
-          <th class="text-center" scope="row">{{ forloop.index }}</th>
+          <th class="text-center" scope="row">OP#{{ forloop.index }}</th>
           <td class="text-nowrap">{{ project.name }}</td>
           <td class="text-center">{{ project.points_per_topic }}</td>
           <td class="text-center">{% if project.topic_hazard %}x{% endif %}</td>
