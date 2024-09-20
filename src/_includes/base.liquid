@@ -115,11 +115,11 @@
   </head>
   <body>
     {% include "header.liquid" %}
-    {% include "subheader.liquid" %}
-    <div class="container-fluid my-3" style="display: grid;gap:0.5rem;">
-      {{ content }}
-    </div>
-    {% include "modal.liquid" %}
+
+    {{ content }}
+
+    {% block modal %}{% endblock %}
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
@@ -158,31 +158,8 @@
         }
       };
     </script>
-    {% if page.url == '/350Web1/' %}
-      <script>
-        function toggleRow(checkbox) {
-          const row = checkbox.closest('tr'); // Get the current row
-          const pointsCell = row.querySelector('[data-subtopic-points]'); // Get the 'points' cell
-          const extraCell = row.querySelector('[data-subtopic-subtotal]'); // Get the 'extra' cell
-          const totalSubtotalCell = document.getElementById('totalSubtotal'); // Get the total subtotal cell in the tfoot
 
-          let totalSubtotal = parseInt(totalSubtotalCell.textContent); // Current total
+    {% block script %}{% endblock %}
 
-          if (checkbox.checked) {
-            const pointsValue = parseInt(pointsCell.getAttribute('data-subtopic-points')); // Get the points value
-            extraCell.textContent = pointsValue; // Update the 'extra' cell with points value
-            extraCell.classList.add('highlight'); // Add highlight class
-            totalSubtotal += pointsValue; // Add to total subtotal
-          } else {
-            const pointsValue = parseInt(extraCell.textContent); // Get the current subtotal (previously points value)
-            extraCell.textContent = '0'; // Reset the 'extra' cell to 0
-            extraCell.classList.remove('highlight'); // Remove highlight class
-            totalSubtotal -= pointsValue; // Subtract from total subtotal
-          }
-
-          totalSubtotalCell.textContent = totalSubtotal; // Update the total subtotal in the footer
-        }
-      </script>
-    {% endif %}
   </body>
 </html>

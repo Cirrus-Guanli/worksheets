@@ -1,75 +1,18 @@
 ---
+layout: base.liquid
 permalink: /
-layout: base
-title: 330OP • Outreach Projects Worksheet
+title: CRS Score Worksheets
+eleventyExcludeFromCollections: true
 ---
 
-<header>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">
-    + Add Project
-  </button>
-</header>
+<div class="container-fluid my-3" style="display: grid;gap:0.5rem;">
 
-<div class="table-responsive">
-  <table class="table table-sm table-bordered table-hover mb-0">
-    <caption class="sr-only">{{ title }}</caption>
-    <thead class="thead-light">
-      <tr>
-        <th scope="col" rowspan="2" class="text-center align-middle">ID</th>
-        <th scope="col" rowspan="2" class="align-middle">Project Name</th>
-        <th scope="col" rowspan="2" class="align-middle">Points per Topic</th>
-        <th scope="col" colspan="6" class="text-center">Topics Covered</th>
-        <th scope="col" colspan="4" class="text-center">PPI Messages</th>
-        <th scope="col" rowspan="2" class="align-middle">Times per Year</th>
-        <th scope="col" rowspan="2" class="align-middle">Count</th>
-        <th scope="col" rowspan="2" class="align-middle">OP</th>
-        <th scope="col" colspan="5" class="text-center">Multipliers</th>
-      </tr>
-      <tr>
-        <th scope="col">Hazard</th>
-        <th scope="col">Insure</th>
-        <th scope="col">People</th>
-        <th scope="col">Property</th>
-        <th scope="col">Build</th>
-        <th scope="col">Natural</th>
-        <th scope="col" class="text-nowrap">Msg 1</th>
-        <th scope="col" class="text-nowrap">Msg 2</th>
-        <th scope="col" class="text-nowrap">Msg 3</th>
-        <th scope="col" class="text-nowrap">Msg 4</th>
-        <th scope="col" class="text-nowrap">PPI?</th>
-        <th scope="col" class="text-nowrap">PPI (OP)</th>
-        <th scope="col" class="text-nowrap">STK?</th>
-        <th scope="col" class="text-nowrap">STK (OP)</th>
-        <th scope="col" class="text-nowrap">OP + PPI + STK</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for project in projects %}
-        <tr>
-          <th class="text-center" scope="row">{{ forloop.index }}</th>
-          <td class="text-nowrap">{{ project.name }}</td>
-          <td class="text-center">{{ project.points_per_topic }}</td>
-          <td class="text-center">{% if project.topic_hazard %}x{% endif %}</td>
-          <td class="text-center">{% if project.topic_insure %}x{% endif %}</td>
-          <td class="text-center">{% if project.topic_people %}x{% endif %}</td>
-          <td class="text-center">{% if project.topic_property %}x{% endif %}</td>
-          <td class="text-center">{% if project.topic_build %}x{% endif %}</td>
-          <td class="text-center">{% if project.topic_natural %}x{% endif %}</td>
-          <td class="text-center">{% if project.msg1 %}x{% endif %}</td>
-          <td class="text-center">{% if project.msg2 %}x{% endif %}</td>
-          <td class="text-center">{% if project.msg3 %}x{% endif %}</td>
-          <td class="text-center">{% if project.msg4 %}x{% endif %}</td>
-          <td class="text-center">{{ project.times_per_year }}</td>
-          <td class="text-center">{{ project.count }}</td>
-          <td class="text-center">{{ project.op }}</td>
-          <td class="text-center">{{ project.ppi? }}</td>
-          <td class="text-center">{{ project.ppi_op }}</td>
-          <td class="text-center">{{ project.stk? }}</td>
-          <td class="text-center">{{ project.stk_op }}</td>
-          <td class="text-center">{{ project.op_ppi_stk }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <h1 class="display-4">Worksheets</h1>
+  <ul>
+    {% assign sortedCollection = collections.all | sort: "data.title" %}
+    {% for page in sortedCollection %}
+      <li><a href="{{ page.url }}">{{ page.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+
 </div>
