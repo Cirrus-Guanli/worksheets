@@ -6,6 +6,8 @@ const isProduction = process.env.ELEVENTY_ENV === `production`;
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
 
+  eleventyConfig.addFilter("group_by", groupBy);
+
   // Minify HTML Output
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
@@ -28,3 +30,23 @@ module.exports = function (eleventyConfig) {
     },
   };
 };
+
+function groupBy(array, key) {
+  const get = (entry) => key.split(".").reduce((acc, key) => acc[key], entry);
+
+  const map = array.reduce((acc, entry) => {
+    const value = get(entry);
+
+    if (typeof acc[value] === "undefined") {
+      acc[value] = [];
+    }
+
+    acc[value].push(entry);
+    return acc;
+  }, {});
+
+  return Object.keys(map).reduce(
+    (acc, key) => [...acc, { name: key, items: map[key] }],
+    []
+  );
+}

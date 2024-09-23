@@ -1,4 +1,5 @@
 {
   "permalink": "/worksheets/{{ page.fileSlug | slugify }}/index.html",
-  "layout": "worksheet.liquid"
+  "layout": "worksheet.liquid",
+  "tags": ["worksheets"]
 }

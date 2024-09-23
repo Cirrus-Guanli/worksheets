@@ -7,18 +7,22 @@ eleventyExcludeFromCollections: true
 
 <div class="container-fluid my-3" style="display: grid;gap:0.5rem;">
 
-  <h1 class="display-4">Worksheets</h1>
-  <dl>
-    {% assign modalCollection = collections.all | where: "data.sheet_type", "modal" | sort: "data.title" %}
-    <dt class="mb-1" style="font-size:1.25rem">Modal</dt>
-    {% for page in modalCollection %}
-      <dd class="pl-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
-    {% endfor %}
-    {% assign nomodalCollection = collections.all | where: "data.sheet_type", "nomodal" | sort: "data.title" %}
-    <dt class="mb-1 mt-3" style="font-size:1.25rem">No-Modal</dt>
-    {% for page in nomodalCollection %}
-      <dd class="pl-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
-    {% endfor %}
-  </dl>
+  <h2>Worksheets</h2>
 
+  <dl>
+    {% assign worksheetGroup = collections.worksheets | group_by: "data.sheet_type" | sort: "data.title" %}
+    {% for group in worksheetGroup %}
+      <dt class="mb-1" style="font-size:1.25rem" id="{{ group.name | slugify }}">
+        {{ group.name |  capitalize }}
+      </dt>
+      {% for page in group.items %}
+        <dd class="pl-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
+      {% endfor %}
+    {% endfor %}
+    <dt class="mb-1" style="font-size:1.25rem" id="errors">
+      Errors
+    </dt>
+     <dd class="pl-3"><a href="errors.html">Errors template</a></dd>
+  </dl>
+  
 </div>
