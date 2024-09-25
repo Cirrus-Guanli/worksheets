@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ISO | CRS Score Worksheets</title>
-    <link href="/Apps/Bootstrap/dist/css/materialize.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Work+Sans&amp;display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <style>
-      :root {
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>ISO | CRS Score Worksheets</title><link href="/Apps/Bootstrap/dist/css/materialize.min.css" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css"><link href="https://fonts.googleapis.com/css?family=Material+Icons|Work+Sans&amp;display=swap" rel="stylesheet"><link rel="icon" type="image/x-icon" href="/images/favicon.ico"><style>:root {
         --primary_blue: #024774;
         --ltblue: #f2f8ff;
         --font-stack: 'work sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -110,85 +98,7 @@
           #f1f5f9 10px
         );
         background-position: center;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="navbar bg-nav p-3">
-    <a href="/" id="brand" class="d-flex align-items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 34">
-        <path fill="#FFF" fill-rule="evenodd"
-          d="M6.874 23.905c3.886-.947 9.522-1.095 16.102 2.229 3.162 1.594 6.745 1.358 9.93.566v-9.233h1.598l-1.136-1.897-.084-.142-.21-.344-7.24-12.209-2.926 3.61V0h-2.727v9.85l-1.328 1.641-3.792-4.008-5.319 5.474V5.882H7.02v9.88l-1.66 1.705 1.514.004v6.434Zm14.261-7.88 4.092-4.11a.183.183 0 0 1 .263 0l4.092 4.11a.19.19 0 0 1 0 .263l-.785.788a.185.185 0 0 1-.26 0l-2.44-2.454v7.167c0 .101-.08.184-.182.185h-1.109a.185.185 0 0 1-.185-.185v-7.167l-2.44 2.454a.185.185 0 0 1-.26 0l-.786-.788a.19.19 0 0 1 0-.263Zm20.66 9.57c-.62-.813-11.01 6.42-18.82 2.48-11.77-5.94-20.51-.779-21.633.186-1.122.964-1.88 2.383-.866 2.295.977-.084 10.86-4.203 20.841.836 3.317 1.675 6.112 2.32 8.505 2.32 4.766 0 9.263-3.109 10.493-4.612 1.23-1.504 2.1-2.693 1.48-3.506Z" />
-      </svg>
-      <h1 class="mb-0 text-white">CRS Submit</h1>
-    </a>
-    <div class="mr-4 ml-auto"><a class="text-white" href="#" id="feedback-button">Give Feedback</a></div>
-    <div class="dropdown">
-      <button class="btn-nope logout-dropdown" type="button" id="dropdownSort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="text-text-ph bg-bg-blue rounded-circle">
-          <span class="sr-only">User Actions</span>
-          <i class="material-icons text-secondary">person</i>
-        </span>
-        <i class="material-icons text-bg-blue">keyboard_arrow_down</i>
-      </button>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSort">
-        <a href="#" class="dropdown-item" id="fontToggle" onclick="toggleFontSize()" class="dropdown-item">Switch to Normal Text</a>
-        <div class="dropdown-divider"></div>
-        <a href="/" class="dropdown-item">Logout</a>
-      </div>
-    </div>
-</div>
-
-    
-<div class="container-fluid my-3" style="display: grid;gap:0.5rem;">
-
-  <h2>Worksheets</h2>
-
-  <dl>
-    
-    
-      <dt class="mb-1" style="font-size:1.25rem" id="modal">
-        Modal
-      </dt>
-      
-        <dd class="pl-3"><a href="/worksheets/330frp/">330FRP • Flood Response Preparations Projects</a></dd>
-      
-        <dd class="pl-3"><a href="/worksheets/330op/">330OP • Outreach Projects</a></dd>
-      
-        <dd class="pl-3"><a href="/worksheets/370cpi/">370CPI • Flood Insurance Promotion</a></dd>
-      
-        <dd class="pl-3"><a href="/worksheets/530credit/">530Credit • Flood Protection Credit Calculation Checklist</a></dd>
-      
-    
-      <dt class="mb-1" style="font-size:1.25rem" id="nomodal">
-        Nomodal
-      </dt>
-      
-        <dd class="pl-3"><a href="/worksheets/350web1/">350Web1 • Scoring Guide</a></dd>
-      
-        <dd class="pl-3"><a href="/worksheets/510fmp/">510FMP • Floodplain Management Planning</a></dd>
-      
-    
-    <dt class="mb-1" style="font-size:1.25rem" id="errors">
-      Errors
-    </dt>
-     <dd class="pl-3"><a href="errors.html">Errors template</a></dd>
-    <dt class="mb-1" style="font-size:1.25rem" id="errors">
-      Verification Report
-    </dt>
-     <dd class="pl-3"><a href="/verification-report/">V1 comp</a></dd>
-  </dl>
-  
-</div>
-
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <script>
-      // Function to toggle font size and anchor text
+      }</style></head><body><div class="navbar bg-nav p-3"><a href="/" id="brand" class="d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 34"><path fill="#FFF" fill-rule="evenodd" d="M6.874 23.905c3.886-.947 9.522-1.095 16.102 2.229 3.162 1.594 6.745 1.358 9.93.566v-9.233h1.598l-1.136-1.897-.084-.142-.21-.344-7.24-12.209-2.926 3.61V0h-2.727v9.85l-1.328 1.641-3.792-4.008-5.319 5.474V5.882H7.02v9.88l-1.66 1.705 1.514.004v6.434Zm14.261-7.88 4.092-4.11a.183.183 0 0 1 .263 0l4.092 4.11a.19.19 0 0 1 0 .263l-.785.788a.185.185 0 0 1-.26 0l-2.44-2.454v7.167c0 .101-.08.184-.182.185h-1.109a.185.185 0 0 1-.185-.185v-7.167l-2.44 2.454a.185.185 0 0 1-.26 0l-.786-.788a.19.19 0 0 1 0-.263Zm20.66 9.57c-.62-.813-11.01 6.42-18.82 2.48-11.77-5.94-20.51-.779-21.633.186-1.122.964-1.88 2.383-.866 2.295.977-.084 10.86-4.203 20.841.836 3.317 1.675 6.112 2.32 8.505 2.32 4.766 0 9.263-3.109 10.493-4.612 1.23-1.504 2.1-2.693 1.48-3.506Z"/></svg><h1 class="mb-0 text-white">CRS Submit</h1></a><div class="mr-4 ml-auto"><a class="text-white" href="#" id="feedback-button">Give Feedback</a></div><div class="dropdown"><button class="btn-nope logout-dropdown" type="button" id="dropdownSort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="text-text-ph bg-bg-blue rounded-circle"><span class="sr-only">User Actions</span> <i class="material-icons text-secondary">person</i> </span><i class="material-icons text-bg-blue">keyboard_arrow_down</i></button><div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSort"><a href="#" class="dropdown-item" id="fontToggle" onclick="toggleFontSize()" class="dropdown-item">Switch to Normal Text</a><div class="dropdown-divider"></div><a href="/" class="dropdown-item">Logout</a></div></div></div><div class="container-fluid my-3" style="display: grid;gap:0.5rem;"><h2>Worksheets</h2><dl><dt class="mb-1" style="font-size:1.25rem" id="modal">Modal</dt><dd class="pl-3"><a href="/worksheets/330frp/">330FRP • Flood Response Preparations Projects</a></dd><dd class="pl-3"><a href="/worksheets/330op/">330OP • Outreach Projects</a></dd><dd class="pl-3"><a href="/worksheets/370cpi/">370CPI • Flood Insurance Promotion</a></dd><dd class="pl-3"><a href="/worksheets/530credit/">530Credit • Flood Protection Credit Calculation Checklist</a></dd><dt class="mb-1" style="font-size:1.25rem" id="nomodal">Nomodal</dt><dd class="pl-3"><a href="/worksheets/350web1/">350Web1 • Scoring Guide</a></dd><dd class="pl-3"><a href="/worksheets/510fmp/">510FMP • Floodplain Management Planning</a></dd><dt class="mb-1" style="font-size:1.25rem" id="errors">Errors</dt><dd class="pl-3"><a href="errors.html">Errors template</a></dd><dt class="mb-1" style="font-size:1.25rem" id="errors">Verification Report</dt><dd class="pl-3"><a href="/verification-report/">V1 comp</a></dd></dl></div><script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script><script>// Function to toggle font size and anchor text
       function toggleFontSize() {
         const htmlElement = document.documentElement;
         const fontToggleLink = document.getElementById('fontToggle');
@@ -219,10 +129,4 @@
           document.documentElement.style.fontSize = '11px';
           fontToggleLink.innerText = 'Switch to Normal Text';
         }
-      };
-    </script>
-
-    
-
-  </body>
-</html>
+      };</script></body></html>
