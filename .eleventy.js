@@ -8,6 +8,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("group_by", groupBy);
 
+  // Add a filter to pretty-print JSON
+  eleventyConfig.addFilter("prettyJson", function(obj) {
+    return JSON.stringify(obj, null, 2);  // '2' adds indentation
+  });
+
   // Minify HTML Output
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
