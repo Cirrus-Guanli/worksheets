@@ -56,12 +56,12 @@ sheet_type: nomodal
       if (checkbox.checked) {
         const pointsValue = parseInt(pointsCell.getAttribute('data-subtopic-points')); // Get the points value
         extraCell.textContent = pointsValue; // Update the 'extra' cell with points value
-        extraCell.classList.add('highlight'); // Add highlight class
+        extraCell.classList.add('highlightcell'); // Add highlight class
         totalSubtotal += pointsValue; // Add to total subtotal
       } else {
         const pointsValue = parseInt(extraCell.textContent); // Get the current subtotal (previously points value)
         extraCell.textContent = '0'; // Reset the 'extra' cell to 0
-        extraCell.classList.remove('highlight'); // Remove highlight class
+        extraCell.classList.remove('highlightcell'); // Remove highlight class
         totalSubtotal -= pointsValue; // Subtract from total subtotal
       }
 

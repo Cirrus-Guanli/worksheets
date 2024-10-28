@@ -13,10 +13,12 @@
       :root {
         --primary_blue: #024774;
         --ltblue: #f2f8ff;
+        --purple: #511d9a;
+        --darkpurple: #3d1377;
         --font-stack: 'work sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
       }
       html {
-        font-size: 11px;
+        font-size: 16px;
       }
       body {
         font-family: var(--font-stack);
@@ -34,20 +36,28 @@
       #brand h1 {
         font-size: 1.4rem;
       }
-      .text-bg-blue {
-        color: #f2f8ff !important;
-      }
       .navbar .logout-dropdown .rounded-circle {
         display: inline-block;
         width: 30px;
         height: 30px;
       }
+      .navbar .logout-dropdown .rounded-circle .material-icons {
+        margin-top: 3px;
+      }
       .text-text-ph {
         color: rgba(0, 0, 0, 0.42) !important;
       }
-      .rounded-circle {
-        border-radius: 50% !important;
+
+      .text-purple {
+        color: var(--purple);
       }
+      .text-bg-blue {
+        color: #f2f8ff !important;
+      }
+      .text-secondary {
+        color: #024774 !important;
+      }
+
       .bg-bg-blue {
         background-color: #f2f8ff !important;
       }
@@ -57,28 +67,39 @@
         border: 0 solid transparent;
         box-shadow: 0 0 0 transparent;
       }
-      .navbar .logout-dropdown .rounded-circle .material-icons {
-        margin-top: 3px;
-      }
-      .text-secondary {
-        color: #024774 !important;
-      }
-      .table-hover tbody tr:hover {
-        background-color: #fafad2;
-      }
       .btn-purple {
         color: #fff;
-        background-color: #511d9a;
-        border-color: #511d9a;
+        background-color: var(--purple);
+        border-color: var(--purple);
       }
       .btn-purple:hover, .btn-purple:focus {
         color: #fff;
-        background-color: #3d1377;
-        border-color: #3d1377;
+        background-color: var(--darkpurple);
+        border-color: var(--darkpurple);
       }
-      .table .thead-light th {
+
+      .table-hover tbody tr:hover {
+        background-color: #fafad2;
+      }
+      .table .thead-light :is(td, th) {
         background-color: var(--ltblue);
+        border-bottom: none !important;
       }
+      .highlightcell {
+        background-color: rgba(241, 231, 254, 0.5);;
+      }
+      .emptycell {
+        background-color: #fff;
+        background-image: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 5px,
+          #f1f5f9 5px,
+          #f1f5f9 10px
+        );
+        background-position: center;
+      }
+
       .modal fieldset {
         display: block;
         border: 1px solid #ccc;
@@ -91,25 +112,8 @@
         text-transform: uppercase;
         font-size: 0.875rem;
         letter-spacing: 0.05rem;
-        color: #511d9a;
+        color: var(--purple);
         background-color: white;
-      }
-      .highlight {
-        background-color: rgba(241, 231, 254, 0.5);;
-      }
-      .text-purple {
-        color: #511d9a;
-      }
-      .emptycell {
-        background-color: #fff;
-        background-image: repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 5px,
-          #f1f5f9 5px,
-          #f1f5f9 10px
-        );
-        background-position: center;
       }
     </style>
   </head>
@@ -124,40 +128,6 @@
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <script>
-      // Function to toggle font size and anchor text
-      function toggleFontSize() {
-        const htmlElement = document.documentElement;
-        const fontToggleLink = document.getElementById('fontToggle');
-
-        // Check the current font size and toggle between 11px (small) and 16px (normal)
-        if (htmlElement.style.fontSize === '11px') {
-          htmlElement.style.fontSize = '16px';  // Switch to larger size (normal)
-          fontToggleLink.innerText = 'Switch to Small Text';  // Update anchor text
-          localStorage.setItem('fontSize', '16px');  // Save user preference
-        } else {
-          htmlElement.style.fontSize = '11px';  // Switch to small size
-          fontToggleLink.innerText = 'Switch to Normal Text';  // Update anchor text
-          localStorage.setItem('fontSize', '11px');  // Save user preference
-        }
-      }
-
-      // On page load, set the font size and anchor text based on saved preferences
-      window.onload = function () {
-        const savedFontSize = localStorage.getItem('fontSize');
-        const fontToggleLink = document.getElementById('fontToggle');
-
-      // Set font size and toggle link text based on the saved preference
-        if (savedFontSize) {
-          document.documentElement.style.fontSize = savedFontSize;
-          fontToggleLink.innerText = savedFontSize === '11px' ? 'Switch to Normal Text' : 'Switch to Small Text';
-        } else {
-          // Default to small font size (11px) if no preference is saved
-          document.documentElement.style.fontSize = '11px';
-          fontToggleLink.innerText = 'Switch to Normal Text';
-        }
-      };
-    </script>
 
     {% block script %}{% endblock %}
 
