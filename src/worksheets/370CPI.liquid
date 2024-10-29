@@ -27,33 +27,33 @@ sheet_type: modal
         <th scope="col" rowspan="2" class="bg-bg-blue text-center align-middle">Actions</th>
         <th scope="col" rowspan="2" class="bg-bg-blue text-center align-middle">ID</th>
         <th scope="col" rowspan="2" class="bg-bg-blue align-middle">Project Name</th>
-        <th scope="col" rowspan="2" class="bg-bg-blue align-middle">A. Points per Topic</th>
-        <th scope="col" rowspan="2" class="bg-bg-blue align-middle">B. Times per Year</th>
-        <th scope="col" rowspan="2" class="bg-bg-blue align-middle">CPI i =<br>A x B x 2</th>
+        <th scope="col" rowspan="2" class="bg-bg-blue align-middle text-center">A. Points per Topic</th>
+        <th scope="col" rowspan="2" class="bg-bg-blue align-middle text-center">B. Times per Year</th>
+        <th scope="col" rowspan="2" class="bg-bg-blue align-middle text-center">CPI i =<br>A x B x 2</th>
         <th scope="col" colspan="5" class="bg-bg-blue text-center">Multipliers</th>
       </tr>
       <tr>
-        <th scope="col" class="text-nowrap">PPI?</th>
-        <th scope="col" class="text-nowrap">PPI (CPI)</th>
-        <th scope="col" class="text-nowrap">STK?</th>
-        <th scope="col" class="text-nowrap">STK (CPI)</th>
-        <th scope="col" class="text-nowrap">CPI + PPI + STK</th>
+        <th scope="col" class="align-middle text-center">PPI?</th>
+        <th scope="col" class="align-middle text-center">PPI (CPI)</th>
+        <th scope="col" class="align-middle text-center">STK?</th>
+        <th scope="col" class="align-middle text-center">STK (CPI)</th>
+        <th scope="col" class="align-middle text-center">CPI + PPI + STK</th>
       </tr>
     </thead>
     <tbody>
       {% for project in cpiprojects %}
       <tr>
-        <td class="text-center text-text-ph d-flex justify-content-around"><span class="material-symbols-outlined">delete</span><span class="material-symbols-outlined">edit</span></td>
-        <th class="text-center" scope="row">CP#{{ forloop.index }}</th>
-        <td class="text-nowrap">{{ project.name }}</td>
-        <td class="text-center">{{ project.points_per_topic }}</td>
-        <td class="text-center">{{ project.times_per_year }}</td>
-        <td class="text-center">{{ project.tally }}</td>
-        <td class="text-center">{{ project.ppi? }}</td>
-        <td class="text-center">{{ project.ppi_cpi }}</td>
-        <td class="text-center">{{ project.stk? }}</td>
-        <td class="text-center">{{ project.stk_cpi }}</td>
-        <td class="text-center">{{ project.cpi_ppi_stk }}</td>
+        <td class="text-center align-middle text-text-ph"><span class="align-middle material-symbols-outlined">delete</span><span class="ml-2 align-middle material-symbols-outlined">edit</span></td>
+        <th class="text-center align-middle" scope="row">CP#{{ forloop.index }}</th>
+        <td class="text-nowrap align-middle">{{ project.name }}</td>
+        <td class="text-center align-middle">{{ project.points_per_topic }}</td>
+        <td class="text-center align-middle">{{ project.times_per_year }}</td>
+        <td class="text-center align-middle">{{ project.tally }}</td>
+        <td class="text-center align-middle">{{ project.ppi? }}</td>
+        <td class="text-center align-middle">{{ project.ppi_cpi }}</td>
+        <td class="text-center align-middle">{{ project.stk? }}</td>
+        <td class="text-center align-middle">{{ project.stk_cpi }}</td>
+        <td class="text-center align-middle">{{ project.cpi_ppi_stk }}</td>
       </tr>
       {% endfor %}
     </tbody>

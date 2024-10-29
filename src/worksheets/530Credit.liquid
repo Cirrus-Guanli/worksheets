@@ -24,7 +24,7 @@ sheet_type: modal
     </caption>
     <thead class="thead-light">
       <tr>
-        <th scope="col" rowspan="2" class="bg-bg-blue text-center align-middle">Actions</th>
+        <th scope="col" class="bg-bg-blue align-middle text-center">Actions</th>
         <th scope="col" class="bg-bg-blue align-middle text-center">Bldg #</th>
         <th scope="col" class="bg-bg-blue align-middle">Address</th>
         <th scope="col" class="bg-bg-blue align-middle text-center">FMA Grant?</th>
@@ -42,7 +42,7 @@ sheet_type: modal
     <tbody>
       {% for item in fpcccitems %}
       <tr>
-        <td class="text-center text-text-ph d-flex justify-content-around"><span class="material-symbols-outlined">delete</span><span class="material-symbols-outlined">edit</span></td>
+        <td class="text-center align-middle text-text-ph"><span class="align-middle material-symbols-outlined">delete</span><span class="ml-2 align-middle material-symbols-outlined">edit</span></td>
         <th class="text-center align-middle" scope="row">OP#{{ forloop.index }}</th>
         <td class="text-nowrap align-middle">{{ item.address }}</td>
         <td class="text-center align-middle">{{ item.fma_grant? }}</td>

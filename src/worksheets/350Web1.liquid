@@ -8,10 +8,10 @@ sheet_type: nomodal
     <caption class="sr-only">{{ title }}</caption>
     <thead class="thead-light">
       <tr>
-        <th class="bg-bg-blue" scope="col">Topic</th>
-        <th class="bg-bg-blue" scope="col">Subtopic</th>
-        <th class="bg-bg-blue" scope="col">Points</th>
-        <th class="bg-bg-blue" scope="col">Total</th>
+        <th class="bg-bg-blue align-middle" scope="col">Topic</th>
+        <th class="bg-bg-blue align-middle" scope="col">Subtopic</th>
+        <th class="bg-bg-blue align-middle text-center" scope="col">Points</th>
+        <th class="bg-bg-blue align-middle text-center" scope="col">Total</th>
       </tr>
     </thead>
     <tbody>
@@ -20,24 +20,24 @@ sheet_type: nomodal
       {% for subtopic in topic.subtopics %}
         <tr>
           {% if forloop.first %}
-            <th scope="row" rowspan="{{ topic.subtopics | size }}">{{ topic.name }}</th>
+            <th class="align-top" scope="row" rowspan="{{ topic.subtopics | size }}">{{ topic.name }}</th>
           {% endif %}
-          <td>
+          <td class="align-middle">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}" value="option{{ forloop.index }}" onchange="toggleRow(this)">
               <label class="form-check-label" for="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}">{{ subtopic.label }}</label>
             </div>
           </td>
-          <td data-subtopic-points="{{ subtopic.points }}" class="text-center text-muted">{{ subtopic.points }}</td>
-          <td data-subtopic-subtotal="0" class="text-center">0</td>
+          <td data-subtopic-points="{{ subtopic.points }}" class="text-center text-muted align-middle">{{ subtopic.points }}</td>
+          <td data-subtopic-subtotal="0" class="text-center align-middle">0</td>
         </tr>
       {% endfor %}
     {% endfor %}
     </tbody>
     <tfoot>
       <tr>
-        <th scope="row" colspan="3" class="text-right px-2">Total</th>
-        <td id="totalSubtotal" class="text-center">0</td>
+        <th scope="row" colspan="3" class="text-right px-2 align-middle">Total</th>
+        <td id="totalSubtotal" class="text-center align-middle">0</td>
       </tr>
     </tfoot>
   </table>
