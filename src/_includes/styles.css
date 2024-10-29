@@ -3,7 +3,8 @@
   --ltblue: #f2f8ff;
   --purple: #511d9a;
   --darkpurple: #3d1377;
-  --smokey: #f1f5f9;
+  --yellow-highlight: #fafad2;
+  --smokey: #eaecee;
   --font-stack: 'work sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -72,25 +73,26 @@ body {
 }
 
 
-/* UNNECESSARY TO RE-CREATE */
-/* just adds light purple highlight to data added via JS -- 350Web1 */
+/* STYLES THAT ARE UNNECESSARY TO RE-CREATE */
+/* just adds light yellow highlight to data added via JS in 350Web1 */
 .highlightcell {
-  background-color: rgba(241, 231, 254, 0.5);
+  background-color: var(--yellow-highlight);
 }
 
 
-/* OVERRIDE BOOTSTRAP */
+/* STYLES TO OVERRIDE BOOTSTRAP */
 /* yellow hover state */
 .table-hover tbody tr:hover {
-  background-color: #fafad2;
+  background-color: var(--yellow-highlight);
 }
-/* ensure THEADs w/multiple TDs or THs don't get two bottom borders */
+/* prevents BS from adding two bottom borders to TDs or THs in THEADs w/thead-light class */
 .table .thead-light :is(td, th) {
   border-bottom: none;
 }
 
-/* NEW */
-/* in some cases, cells act as in-table headings; this is just for empty siblings...optional */
+
+/* NEW STYLES */
+/* in 510FMP, some cells act as in-table headings; this styles their empty, adjacent siblings...optional */
 .emptycell {
   background-color: white;
   background-image: repeating-linear-gradient(
