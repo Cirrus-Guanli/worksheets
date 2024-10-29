@@ -14,7 +14,7 @@ sheet_type: modal
   <table class="table table-sm table-bordered table-hover mb-0">
     <caption class="sr-only">{{ title }}</caption>
     <thead class="thead-light">
-      <tr>
+        <tr>        <th scope="col" rowspan="2" class="text-center align-middle">Actions</th>
         <th scope="col" rowspan="2" class="text-center align-middle">ID</th>
         <th scope="col" rowspan="2" class="align-middle">Project Name</th>
         <th scope="col" rowspan="2" class="align-middle">Points per Topic</th>
@@ -46,6 +46,7 @@ sheet_type: modal
     <tbody>
       {% for project in outreachprojects %}
         <tr>
+          <td class="text-center text-text-ph d-flex justify-content-around"><span class="material-symbols-outlined">delete</span><span class="material-symbols-outlined">edit</span></td>
           <th class="text-center" scope="row">OP#{{ forloop.index }}</th>
           <td class="text-nowrap">{{ project.name }}</td>
           <td class="text-center">{{ project.points_per_topic }}</td>
