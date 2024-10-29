@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
   <dl>
     {% assign worksheetGroup = collections.worksheets | group_by: "data.sheet_type" | sort: "data.title" %}
     {% for group in worksheetGroup %}
-      <dt class="mb-1" style="font-size:1.25rem" id="{{ group.name | slugify }}">
+      <dt class="mb-1" id="{{ group.name | slugify }}">
         {{ group.name |  capitalize }}
       </dt>
       {% for page in group.items %}
@@ -25,7 +25,7 @@ eleventyExcludeFromCollections: true
 <section class="mb-5">
   <h2>Errors</h2>
   <dl>
-    <dt class="mb-1" style="font-size:1.25rem" id="errors">
+    <dt class="mb-1">
       502 / 503 Errors
     </dt>
     <dd class="pl-3"><a href="errors.html">Errors template</a></dd>
@@ -33,12 +33,13 @@ eleventyExcludeFromCollections: true
 </section>
 
 <section>
-  <h2>Verification Report</h2>
+  <h2>In Progress</h2>
   <dl>
-    <dt class="mb-1" style="font-size:1.25rem" id="errors">
-      V1 - Draft!
+    <dt class="mb-1">
+      Concepts
     </dt>
-    <dd class="pl-3"><a href="/verification-report/">V1 comp</a></dd>
+    <dd class="pl-3"><a href="/verification-report/">Verification Report V1</a></dd>
+    <dd class="pl-3"><a href="/quick-submit/">CRS Quick Submit V1</a></dd>
   </dl>
 </section>
 
