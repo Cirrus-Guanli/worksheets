@@ -5,10 +5,10 @@ title: CRS Score Worksheets
 eleventyExcludeFromCollections: true
 ---
 
-<div class="container-fluid my-3" style="display: grid;gap:0.5rem;">
+<div class="container-fluid my-3">
 
+<section class="mb-5">
   <h2>Worksheets</h2>
-
   <dl>
     {% assign worksheetGroup = collections.worksheets | group_by: "data.sheet_type" | sort: "data.title" %}
     {% for group in worksheetGroup %}
@@ -20,7 +20,9 @@ eleventyExcludeFromCollections: true
       {% endfor %}
     {% endfor %}
   </dl>
+</section>
 
+<section class="mb-5">
   <h2>Errors</h2>
   <dl>
     <dt class="mb-1" style="font-size:1.25rem" id="errors">
@@ -28,7 +30,9 @@ eleventyExcludeFromCollections: true
     </dt>
     <dd class="pl-3"><a href="errors.html">Errors template</a></dd>
   </dl>
+</section>
 
+<section>
   <h2>Verification Report</h2>
   <dl>
     <dt class="mb-1" style="font-size:1.25rem" id="errors">
@@ -36,5 +40,6 @@ eleventyExcludeFromCollections: true
     </dt>
     <dd class="pl-3"><a href="/verification-report/">V1 comp</a></dd>
   </dl>
+</section>
 
 </div>
