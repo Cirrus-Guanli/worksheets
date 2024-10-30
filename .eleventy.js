@@ -6,8 +6,6 @@ const isProduction = process.env.ELEVENTY_ENV === `production`;
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
 
-  eleventyConfig.addFilter("group_by", groupBy);
-
   // Add a filter to pretty-print JSON
   eleventyConfig.addFilter("prettyJson", function(obj) {
     return JSON.stringify(obj, null, 2);  // '2' adds indentation
@@ -35,23 +33,3 @@ module.exports = function (eleventyConfig) {
     },
   };
 };
-
-function groupBy(array, key) {
-  const get = (entry) => key.split(".").reduce((acc, key) => acc[key], entry);
-
-  const map = array.reduce((acc, entry) => {
-    const value = get(entry);
-
-    if (typeof acc[value] === "undefined") {
-      acc[value] = [];
-    }
-
-    acc[value].push(entry);
-    return acc;
-  }, {});
-
-  return Object.keys(map).reduce(
-    (acc, key) => [...acc, { name: key, items: map[key] }],
-    []
-  );
-}
