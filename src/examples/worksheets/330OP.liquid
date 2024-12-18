@@ -1,5 +1,5 @@
 ---
-title: 330OP • Outreach Projects
+title: 330OP • Outreach Projects Worksheet
 sheet_type: modal
 outreachprojects:
   - name: Water Bill Insert - English
@@ -604,11 +604,12 @@ outreachprojects:
     op_ppi_stk: 24
 ---
 
-<header class="mb-2">
+<header class="d-flex justify-content-between mb-2">
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">
     + Add Project
   </button>
+  <a href="#" class="btn btn-sm btn-outline-secondary">Discard</a>
 </header>
 
 <div class="table-responsive">
@@ -628,21 +629,21 @@ outreachprojects:
         <th scope="col" colspan="5" class="bg-bg-blue text-center align-middle">Multipliers</th>
       </tr>
       <tr>
-        <th class="align-middle text-center" scope="col">Hazard</th>
-        <th class="align-middle text-center" scope="col">Insure</th>
-        <th class="align-middle text-center" scope="col">People</th>
-        <th class="align-middle text-center" scope="col">Property</th>
-        <th class="align-middle text-center" scope="col">Build</th>
-        <th class="align-middle text-center" scope="col">Natural</th>
-        <th scope="col" class="text-nowrap align-middle text-center">Msg 1</th>
-        <th scope="col" class="text-nowrap align-middle text-center">Msg 2</th>
-        <th scope="col" class="text-nowrap align-middle text-center">Msg 3</th>
-        <th scope="col" class="text-nowrap align-middle text-center">Msg 4</th>
-        <th scope="col" class="text-nowrap align-middle text-center">PPI?</th>
-        <th scope="col" class="text-nowrap align-middle text-center">PPI (OP)</th>
-        <th scope="col" class="text-nowrap align-middle text-center">STK?</th>
-        <th scope="col" class="text-nowrap align-middle text-center">STK (OP)</th>
-        <th scope="col" class="text-nowrap align-middle text-center">OP + PPI + STK</th>
+        <th class="bg-bg-blue align-middle text-center" scope="col">Hazard</th>
+        <th class="bg-bg-blue align-middle text-center" scope="col">Insure</th>
+        <th class="bg-bg-blue align-middle text-center" scope="col">People</th>
+        <th class="bg-bg-blue align-middle text-center" scope="col">Property</th>
+        <th class="bg-bg-blue align-middle text-center" scope="col">Build</th>
+        <th class="bg-bg-blue align-middle text-center" scope="col">Natural</th>
+        <th scope="col" class="text-nowrap bg-bg-blue align-middle text-center">Msg 1</th>
+        <th scope="col" class="text-nowrap bg-bg-blue align-middle text-center">Msg 2</th>
+        <th scope="col" class="text-nowrap bg-bg-blue align-middle text-center">Msg 3</th>
+        <th scope="col" class="text-nowrap bg-bg-blue align-middle text-center">Msg 4</th>
+        <th scope="col" class="text-nowrap bg-bg-blue align-middle text-center">PPI?</th>
+        <th scope="col" class="text-nowrap bg-bg-blue align-middle text-center">PPI (OP)</th>
+        <th scope="col" class="text-nowrap bg-bg-blue align-middle text-center">STK?</th>
+        <th scope="col" class="text-nowrap bg-bg-blue align-middle text-center">STK (OP)</th>
+        <th scope="col" class="text-nowrap bg-bg-blue align-middle text-center">OP + PPI + STK</th>
       </tr>
     </thead>
     <tbody>
@@ -652,16 +653,16 @@ outreachprojects:
           <th class="text-center align-middle" scope="row">OP#{{ forloop.index }}</th>
           <td class="text-nowrap align-middle">{{ project.name }}</td>
           <td class="text-center align-middle">{{ project.points_per_topic }}</td>
-          <td class="text-center align-middle">{% if project.topic_hazard %}x{% endif %}</td>
-          <td class="text-center align-middle">{% if project.topic_insure %}x{% endif %}</td>
-          <td class="text-center align-middle">{% if project.topic_people %}x{% endif %}</td>
-          <td class="text-center align-middle">{% if project.topic_property %}x{% endif %}</td>
-          <td class="text-center align-middle">{% if project.topic_build %}x{% endif %}</td>
-          <td class="text-center align-middle">{% if project.topic_natural %}x{% endif %}</td>
-          <td class="text-center align-middle">{% if project.msg1 %}x{% endif %}</td>
-          <td class="text-center align-middle">{% if project.msg2 %}x{% endif %}</td>
-          <td class="text-center align-middle">{% if project.msg3 %}x{% endif %}</td>
-          <td class="text-center align-middle">{% if project.msg4 %}x{% endif %}</td>
+          <td class="text-center align-middle">{% if project.topic_hazard %}&#10003;{% endif %}</td>
+          <td class="text-center align-middle">{% if project.topic_insure %}&#10003;{% endif %}</td>
+          <td class="text-center align-middle">{% if project.topic_people %}&#10003;{% endif %}</td>
+          <td class="text-center align-middle">{% if project.topic_property %}&#10003;{% endif %}</td>
+          <td class="text-center align-middle">{% if project.topic_build %}&#10003;{% endif %}</td>
+          <td class="text-center align-middle">{% if project.topic_natural %}&#10003;{% endif %}</td>
+          <td class="text-center align-middle">{% if project.msg1 %}&#10003;{% endif %}</td>
+          <td class="text-center align-middle">{% if project.msg2 %}&#10003;{% endif %}</td>
+          <td class="text-center align-middle">{% if project.msg3 %}&#10003;{% endif %}</td>
+          <td class="text-center align-middle">{% if project.msg4 %}&#10003;{% endif %}</td>
           <td class="text-center align-middle">{{ project.times_per_year }}</td>
           <td class="text-center align-middle">{{ project.count }}</td>
           <td class="text-center align-middle">{{ project.op }}</td>

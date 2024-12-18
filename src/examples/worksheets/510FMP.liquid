@@ -1,5 +1,5 @@
 ---
-title: 510FMP • Floodplain Management Planning
+title: 510FMP • Floodplain Management Planning Credit Worksheet
 sheet_type: nomodal
 fmptopics:
   - name: Organize to prepare the plan
@@ -220,28 +220,39 @@ fmptopics:
 
 {% assign alphabet = "abcdefghijklmnopqrstuvwxyz" | split: "" %}
 
+<form>
+  <div class="form-group mb-2">
+    <label for="inputPassword2" class="sr-only">Name of the Plan</label>
+    <input type="text" class="form-control" id="inputPassword2" placeholder="Name of the Plan">
+  </div>
+</form>
+
 <div class="table-responsive">
   <table class="table table-sm table-bordered mb-0">
     <caption class="sr-only">{{ title }}</caption>
     <thead class="thead-light">
       <tr>
-        <th class="bg-bg-blue align-middle" scope="col">Topic</th>
-        <th class="bg-bg-blue align-middle" scope="col">CRS Step</th>
+        <th class="bg-bg-blue align-middle" colspan="2" scope="col">CRS Step</th>
+        <th class="bg-bg-blue align-middle" scope="col">Section / Page</th>
         <th class="bg-bg-blue align-middle text-center" scope="col">Max Pts</th>
         <th class="bg-bg-blue align-middle text-center" scope="col" style="width:10px;">Score</th>
-        <th class="bg-bg-blue align-middle" scope="col">Section / Page</th>
       </tr>
     </thead>
     <tbody>
     {% for topic in fmptopics %}
       {% assign outerloop = forloop.index %}
-      {% assign formula = formula | append: "T" | append: outerloop %}
       {% for step in topic.steps %}
         <tr>
           {% if forloop.first %}
-            <th class="align-top" scope="row" rowspan="{{ topic.steps | size | plus: 1 }}">Topic {{ outerloop }}: {{ topic.name }}<div class="font-weight-normal text-muted">Maximum points: {{ topic.maxpoints }}</div></th>
+            <th class="align-top" scope="row" rowspan="{{ topic.steps | size | plus: 1 }}">{{ outerloop }}. {{ topic.name }}<div class="font-weight-normal text-muted">Maximum points: {{ topic.maxpoints }}</div></th>
           {% endif %}
           <td class="align-middle{% if step.is_substep == true %} pl-5{% endif %}">{{ step.label }}</td>
+          <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
+            {%  unless step.has_substeps == true %}
+              <label for="sp_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
+              <input type="text" class="form-control form-control-sm" id="sp_t{{ outerloop }}-s{{ forloop.index }}" placeholder="{% if outerloop == 9 %}{{ 'Insert Adoption Date' }}{% endif %}">
+            {% endunless %}
+          </td>
           <td class="text-center align-middle text-muted">{{ step.points }}</td>
           <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
             {% unless step.has_substeps == true %}
@@ -250,27 +261,18 @@ fmptopics:
               class="form-control form-control-sm text-center" id="score_t{{ outerloop }}-s{{ forloop.index }}" placeholder="0">
             {% endunless %}
           </td>
-          <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
-            {%  unless step.has_substeps == true %}
-              <label for="sp_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
-              <input type="text" class="form-control form-control-sm" id="sp_t{{ outerloop }}-s{{ forloop.index }}">
-            {% endunless %}
-          </td>
         </tr>
         {% if forloop.last %}
           <tr>
-            <td colspan="4" class="font-weight-bold text-right">T{{ outerloop }}: 0</td>
+            <td colspan="4" class="font-weight-bold text-right">Step {{ outerloop }}: 0</td>
           </tr>
         {% endif %}
       {% endfor %}
-      {% if forloop.last == false %}
-      {% assign formula = formula | append: " + " %}
-      {% endif %}
     {% endfor %}
     </tbody>
     <tfoot>
       <tr>
-        <th scope="row" colspan="5" class="text-right text-purple">{{ formula }}: 0</th>
+        <th scope="row" colspan="5" class="text-right text-purple">FMP = 0</th>
       </tr>
     </tfoot>
   </table>

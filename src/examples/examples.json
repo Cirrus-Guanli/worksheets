@@ -1,0 +1,4 @@
+{
+  "permalink": "/examples/{{ slug }}/{{ page.fileSlug | slugify }}/index.html",
+  "tags": ["examples"]
+}

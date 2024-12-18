@@ -20,6 +20,8 @@ body {
   background-color: var(--primary_blue);
 }
 #brand {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 #brand svg {
@@ -94,15 +96,7 @@ body {
 /* NEW STYLES */
 /* in 510FMP, some cells act as in-table headings; this styles their empty, adjacent siblings...optional */
 .emptycell {
-  background-color: white;
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 5px,
-    var(--smokey) 5px,
-    var(--smokey) 10px
-  );
-  background-position: center;
+  background-color: var(--smokey);
 }
 /* i didn't see support in BS 4.6 for LEGENDs... */
 .modal legend {
