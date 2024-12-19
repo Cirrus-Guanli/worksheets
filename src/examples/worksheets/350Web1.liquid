@@ -1,5 +1,5 @@
 ---
-title: 350Web1 • Scoring Guide Worksheet
+title: 350WEB1 • Scoring Worksheet
 sheet_type: nomodal
 webtopics:
   - name: Know your flood hazard
@@ -104,17 +104,18 @@ webtopics:
     <tr>
       <th class="bg-bg-blue align-middle" scope="col">Topic</th>
       <th class="bg-bg-blue align-middle" scope="col">Subtopic</th>
-      <th class="bg-bg-blue align-middle text-center" scope="col">Points</th>
-      <th class="bg-bg-blue align-middle text-center" scope="col">Total</th>
+      <th class="bg-bg-blue align-middle text-center" scope="col">Max Pts</th>
+      <th class="bg-bg-blue align-middle text-center" scope="col">Score</th>
     </tr>
   </thead>
   <tbody>
   {% for topic in webtopics %}
     {% assign outerloop = forloop.index %}
+    {% assign num_subtopics = topic.subtopics | size %}
     {% for subtopic in topic.subtopics %}
       <tr>
         {% if forloop.first %}
-          <th class="align-top" scope="row" rowspan="{{ topic.subtopics | size }}">{{ topic.name }}</th>
+          <th class="align-top" scope="row" rowspan="{{ topic.subtopics | size }}">{{ outerloop }}. {{ topic.name }}</th>
         {% endif %}
         <td class="align-middle">
           <div class="form-check form-check-inline">
@@ -123,42 +124,17 @@ webtopics:
           </div>
         </td>
         <td data-subtopic-points="{{ subtopic.points }}" class="text-center text-muted align-middle">{{ subtopic.points }}</td>
-        <td data-subtopic-subtotal="0" class="text-center align-middle">0</td>
+        {% if forloop.first %}
+          <td rowspan="{{ num_subtopics }}" class="text-center align-middle">0</td>
+        {% endif %}
       </tr>
     {% endfor %}
   {% endfor %}
   </tbody>
   <tfoot>
     <tr>
-      <th scope="row" colspan="3" class="text-right px-2 align-middle">Total</th>
+      <th scope="row" colspan="3" class="text-right px-2 align-middle">WEB1 =</th>
       <td id="totalSubtotal" class="text-center align-middle">0</td>
     </tr>
   </tfoot>
 </table>
-
-{% block script %}
-  <script>
-    function toggleRow(checkbox) {
-      const row = checkbox.closest('tr'); // Get the current row
-      const pointsCell = row.querySelector('[data-subtopic-points]'); // Get the 'points' cell
-      const extraCell = row.querySelector('[data-subtopic-subtotal]'); // Get the 'extra' cell
-      const totalSubtotalCell = document.getElementById('totalSubtotal'); // Get the total subtotal cell in the tfoot
-
-      let totalSubtotal = parseInt(totalSubtotalCell.textContent); // Current total
-
-      if (checkbox.checked) {
-        const pointsValue = parseInt(pointsCell.getAttribute('data-subtopic-points')); // Get the points value
-        extraCell.textContent = pointsValue; // Update the 'extra' cell with points value
-        extraCell.classList.add('highlightcell'); // Add highlight class
-        totalSubtotal += pointsValue; // Add to total subtotal
-      } else {
-        const pointsValue = parseInt(extraCell.textContent); // Get the current subtotal (previously points value)
-        extraCell.textContent = '0'; // Reset the 'extra' cell to 0
-        extraCell.classList.remove('highlightcell'); // Remove highlight class
-        totalSubtotal -= pointsValue; // Subtract from total subtotal
-      }
-
-      totalSubtotalCell.textContent = totalSubtotal; // Update the total subtotal in the footer
-    }
-  </script>
-{% endblock %}    

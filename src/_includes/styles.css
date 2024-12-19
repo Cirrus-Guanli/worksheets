@@ -87,14 +87,6 @@ body {
 }
 
 
-
-/* STYLES THAT ARE UNNECESSARY TO RE-CREATE */
-/* just adds light yellow highlight to data added via JS in 350Web1 */
-.highlightcell {
-  background-color: var(--yellow-highlight);
-}
-
-
 /* STYLES TO OVERRIDE BOOTSTRAP */
 /* yellow hover state */
 .table-hover tbody tr:hover {
