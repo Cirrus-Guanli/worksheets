@@ -248,61 +248,59 @@ fpcccitems:
   <a href="#" class="btn btn-sm btn-outline-secondary">Discard</a>
 </header>
 
-<div class="table-responsive">
-  <table class="table table-sm table-bordered table-hover mb-0">
-    <caption class="sr-only">
-      {{
-        title
-      }}
-    </caption>
-    <thead class="thead-light">
-      <tr>
-        <th scope="col" class="bg-bg-blue align-middle text-center">Actions</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">Bldg #</th>
-        <th scope="col" class="bg-bg-blue align-middle">Address</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">FMA Grant?</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">FPP<br>(Post-Project)</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">FPB<br>(Pre-Project)</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">FPI<br>(FPP - FBP)</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">TU<br>(Technique Used)</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">PB<br>(TU x FPI)</th>
-        <th scope="col" class="bg-bg-blue align-middle">Building Type</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center"># of Buildings</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">No. of Buildings w/ FMA Multiplier and TU</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">PB w/ FMA Multiplier</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in fpcccitems %}
-      <tr>
-        <td class="text-center align-middle text-text-ph"><span class="align-middle material-symbols-outlined">delete</span><span class="ml-2 align-middle material-symbols-outlined">edit</span></td>
-        <th class="text-center align-middle" scope="row">OP#{{ forloop.index }}</th>
-        <td class="text-nowrap align-middle">{{ item.address }}</td>
-        <td class="text-center align-middle">{{ item.fma_grant? }}</td>
-        <td class="text-center align-middle">{{ item.fpp }}</td>
-        <td class="text-center align-middle">{{ item.fpb }}</td>
-        <td class="text-center align-middle">{{ item.fpi }}</td>
-        <td class="text-center align-middle">{{ item.tu }}</td>
-        <td class="text-center align-middle">{{ item.pb }}</td>
-        <td class="align-middle">{{ item.building_type }}</td>
-        <td class="text-center align-middle">{{ item.num_of_buildings }}</td>
-        <td class="text-center align-middle">{{ item.num_buildings_fma_and_tu }}</td>
-        <td class="text-center align-middle">{{ item.pb_fma_multiplier }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-    <tfoot>
-      <tr>
-        <td scope="row" colspan="12" class="text-right text-purple mr-3"><strong>Option 1:</strong><span class="d-block text-muted">c530 = 2.4 x Total # of Buildings that qualify x Technique Used (TU)</span></td>
-        <td scope="row" class="text-center text-purple align-middle font-weight-bold">0</td>
-      </tr>
-      <tr>
-        <td scope="row" colspan="12" class="text-right text-purple mr-3"><strong>Option 2:</strong><span class="d-block text-muted">c530 = 16 x SPB x 100 / bSF</span></td>
-        <td scope="row" class="text-center text-purple align-middle font-weight-bold">0</td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
+<table class="table table-sm table-bordered table-hover worksheet-table mb-0">
+  <caption class="sr-only">
+    {{
+      title
+    }}
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col" class="bg-bg-blue align-middle text-center">Actions</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">Bldg #</th>
+      <th scope="col" class="bg-bg-blue align-middle">Address</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">FMA Grant?</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">FPP<br>(Post-Project)</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">FPB<br>(Pre-Project)</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">FPI<br>(FPP - FBP)</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">TU<br>(Technique Used)</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">PB<br>(TU x FPI)</th>
+      <th scope="col" class="bg-bg-blue align-middle">Building Type</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center"># of Buildings</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">No. of Buildings w/ FMA Multiplier and TU</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">PB w/ FMA Multiplier</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in fpcccitems %}
+    <tr>
+      <td class="text-center align-middle text-text-ph"><span class="align-middle material-symbols-outlined">delete</span><span class="ml-2 align-middle material-symbols-outlined">edit</span></td>
+      <th class="text-center align-middle" scope="row">OP#{{ forloop.index }}</th>
+      <td class="text-nowrap align-middle">{{ item.address }}</td>
+      <td class="text-center align-middle">{{ item.fma_grant? }}</td>
+      <td class="text-center align-middle">{{ item.fpp }}</td>
+      <td class="text-center align-middle">{{ item.fpb }}</td>
+      <td class="text-center align-middle">{{ item.fpi }}</td>
+      <td class="text-center align-middle">{{ item.tu }}</td>
+      <td class="text-center align-middle">{{ item.pb }}</td>
+      <td class="align-middle">{{ item.building_type }}</td>
+      <td class="text-center align-middle">{{ item.num_of_buildings }}</td>
+      <td class="text-center align-middle">{{ item.num_buildings_fma_and_tu }}</td>
+      <td class="text-center align-middle">{{ item.pb_fma_multiplier }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td scope="row" colspan="12" class="text-right text-purple mr-3"><strong>Option 1:</strong><span class="d-block text-muted">c530 = 2.4 x Total # of Buildings that qualify x Technique Used (TU)</span></td>
+      <td scope="row" class="text-center text-purple align-middle font-weight-bold">0</td>
+    </tr>
+    <tr>
+      <td scope="row" colspan="12" class="text-right text-purple mr-3"><strong>Option 2:</strong><span class="d-block text-muted">c530 = 16 x SPB x 100 / bSF</span></td>
+      <td scope="row" class="text-center text-purple align-middle font-weight-bold">0</td>
+    </tr>
+  </tfoot>
+</table>
 
 {% block modal %}
   <!-- Modal -->

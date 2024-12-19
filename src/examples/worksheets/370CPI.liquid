@@ -227,50 +227,48 @@ cpiprojects:
   <a href="#" class="btn btn-sm btn-outline-secondary">Discard</a>
 </header>
 
-<div class="table-responsive">
-  <table class="table table-sm table-bordered table-hover mb-0">
-    <caption class="sr-only">
-      {{
-        title
-      }}
-    </caption>
-    <thead class="thead-light">
-      <tr>
-        <th scope="col" rowspan="2" class="bg-bg-blue text-center align-middle">Actions</th>
-        <th scope="col" rowspan="2" class="bg-bg-blue text-center align-middle">ID</th>
-        <th scope="col" rowspan="2" class="bg-bg-blue align-middle">Project Name</th>
-        <th scope="col" rowspan="2" class="bg-bg-blue align-middle text-center">A. Points per Topic</th>
-        <th scope="col" rowspan="2" class="bg-bg-blue align-middle text-center">B. Times per Year</th>
-        <th scope="col" rowspan="2" class="bg-bg-blue align-middle text-center">CPI i =<br>A x B x 2</th>
-        <th scope="col" colspan="5" class="bg-bg-blue text-center">Multipliers</th>
-      </tr>
-      <tr>
-        <th scope="col" class="bg-bg-blue align-middle text-center">PPI?</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">PPI (CPI)</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">STK?</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">STK (CPI)</th>
-        <th scope="col" class="bg-bg-blue align-middle text-center">CPI + PPI + STK</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for project in cpiprojects %}
-      <tr>
-        <td class="text-center align-middle text-text-ph"><span class="align-middle material-symbols-outlined">delete</span><span class="ml-2 align-middle material-symbols-outlined">edit</span></td>
-        <th class="text-center align-middle" scope="row">CP#{{ forloop.index }}</th>
-        <td class="text-nowrap align-middle">{{ project.name }}</td>
-        <td class="text-center align-middle">{{ project.points_per_topic }}</td>
-        <td class="text-center align-middle">{{ project.times_per_year }}</td>
-        <td class="text-center align-middle">{{ project.tally }}</td>
-        <td class="text-center align-middle">{{ project.ppi? }}</td>
-        <td class="text-center align-middle">{{ project.ppi_cpi }}</td>
-        <td class="text-center align-middle">{{ project.stk? }}</td>
-        <td class="text-center align-middle">{{ project.stk_cpi }}</td>
-        <td class="text-center align-middle">{{ project.cpi_ppi_stk }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+<table class="table table-sm table-bordered table-hover worksheet-table mb-0">
+  <caption class="sr-only">
+    {{
+      title
+    }}
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col" rowspan="2" class="bg-bg-blue text-center align-middle">Actions</th>
+      <th scope="col" rowspan="2" class="bg-bg-blue text-center align-middle">ID</th>
+      <th scope="col" rowspan="2" class="bg-bg-blue align-middle">Project Name</th>
+      <th scope="col" rowspan="2" class="bg-bg-blue align-middle text-center">A. Points per Topic</th>
+      <th scope="col" rowspan="2" class="bg-bg-blue align-middle text-center">B. Times per Year</th>
+      <th scope="col" rowspan="2" class="bg-bg-blue align-middle text-center">CPI i =<br>A x B x 2</th>
+      <th scope="col" colspan="5" class="bg-bg-blue text-center">Multipliers</th>
+    </tr>
+    <tr>
+      <th scope="col" class="bg-bg-blue align-middle text-center">PPI?</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">PPI (CPI)</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">STK?</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">STK (CPI)</th>
+      <th scope="col" class="bg-bg-blue align-middle text-center">CPI + PPI + STK</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project in cpiprojects %}
+    <tr>
+      <td class="text-center align-middle text-text-ph"><span class="align-middle material-symbols-outlined">delete</span><span class="ml-2 align-middle material-symbols-outlined">edit</span></td>
+      <th class="text-center align-middle" scope="row">CP#{{ forloop.index }}</th>
+      <td class="text-nowrap align-middle">{{ project.name }}</td>
+      <td class="text-center align-middle">{{ project.points_per_topic }}</td>
+      <td class="text-center align-middle">{{ project.times_per_year }}</td>
+      <td class="text-center align-middle">{{ project.tally }}</td>
+      <td class="text-center align-middle">{{ project.ppi? }}</td>
+      <td class="text-center align-middle">{{ project.ppi_cpi }}</td>
+      <td class="text-center align-middle">{{ project.stk? }}</td>
+      <td class="text-center align-middle">{{ project.stk_cpi }}</td>
+      <td class="text-center align-middle">{{ project.cpi_ppi_stk }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 {% block modal %}
 <!-- Modal -->

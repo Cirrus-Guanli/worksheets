@@ -30,7 +30,9 @@ eleventyExcludeFromCollections: true
     <dt class="mb-1">
       502 / 503 Errors
     </dt>
-    <dd class="pl-3"><a href="errors.html">Errors template</a></dd>
+    {% for page in collections.errors %}
+      <dd class="pl-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
+    {% endfor %}
   </dl>
 </section>
 
@@ -40,8 +42,9 @@ eleventyExcludeFromCollections: true
     <dt class="mb-1">
       Concepts
     </dt>
-    <dd class="pl-3"><a href="/verification-report/">Verification Report V1</a></dd>
-    <dd class="pl-3"><a href="/quick-submit/">CRS Quick Submit V1</a></dd>
+    {% for page in collections.other %}
+      <dd class="pl-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
+    {% endfor %}
   </dl>
 </section>
 
