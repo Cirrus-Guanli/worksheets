@@ -388,7 +388,10 @@ floodresponseprojects:
   >
     + Add Project
   </button>
-  <a href="#" class="btn btn-sm btn-outline-secondary">Discard</a>
+  <div>
+    <a href="#" class="btn btn-sm btn-outline-secondary">Discard</a>
+    <a href="#" class="btn btn-sm btn-outline-secondary">Print</a>
+  </div>
 </header>
 
 <table class="table table-sm table-bordered table-hover worksheet-table mb-0">
@@ -428,7 +431,8 @@ floodresponseprojects:
   <tbody>
     {% for project in floodresponseprojects %}
     <tr>
-      <td class="text-center align-middle text-text-ph"><span class="align-middle material-symbols-outlined">delete</span><span class="ml-2 align-middle material-symbols-outlined">edit</span></td>
+      <td class="text-center align-middle text-text-ph"><span class="align-middle material-symbols-outlined">delete</span><span data-toggle="modal"
+    data-target="#exampleModal" class="ml-2 align-middle material-symbols-outlined">edit</span></td>
       <th class="text-center align-middle" scope="row">FRP#{{ forloop.index }}</th>
       <td class="text-nowrap align-middle">{{ project.name }}</td>
       <td class="text-center align-middle">{{ project.points_per_topic }}</td>
