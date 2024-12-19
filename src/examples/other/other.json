@@ -1,5 +1,5 @@
 {
   "slug": "other",
-  "layout": "example.liquid",
+  "layout": "layouts/example.liquid",
   "tags": ["other"]
 }

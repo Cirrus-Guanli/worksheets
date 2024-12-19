@@ -1,5 +1,5 @@
 {
   "slug": "worksheets",
-  "layout": "worksheet.liquid",
+  "layout": "layouts/worksheet.liquid",
   "tags": ["worksheets"]
 }
