@@ -76,7 +76,7 @@ body {
 .worksheet-table thead {
   position: sticky;
   top: 0;
-  z-index: 1049;
+  z-index: 1039; /* Bootstrap Modal uses 1040 */
 }
 .worksheet-table thead th {
   border: 0;
