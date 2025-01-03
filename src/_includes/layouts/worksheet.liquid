@@ -11,3 +11,8 @@ layout: layouts/base.liquid
   {% endif %}
   {{ content }}
 </div>
+
+{% if sheet_type == "modal" %}
+  {% include "partials/worksheet-edit-modal.liquid" %}
+  {% include "partials/worksheet-delete-all-modal.liquid" %}
+{% endif %}
