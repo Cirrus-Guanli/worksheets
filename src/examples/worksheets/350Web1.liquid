@@ -32,13 +32,13 @@ webtopics:
         points: 2
       - label: Rating information
         points: 2
-      - label: Link to FloodSmart or FEMA.gov’s NFIP page
+      - label: Link to FloodSmart or FEMA.gov's NFIP page
         points: 2
       - label: Names of local insurance agents
         points: 2
   - name: Protect people from the hazard
     subtopics:
-      - label: Don’t drive in flooded areas
+      - label: Don't drive in flooded areas
         points: 1
       - label: Flood warning signals
         points: 1
@@ -68,7 +68,7 @@ webtopics:
         points: 7
       - label: >-
           Link to a locally pertinent property protection website or reference
-          (e.g., FEMA’s “Six Ways to Protect Your Home”)
+          (e.g., FEMA's “Six Ways to Protect Your Home”)
         points: 7
   - name: Build responsibly
     subtopics:
@@ -90,12 +90,28 @@ webtopics:
         points: 2
   - name: Protect natural floodplain functions
     subtopics:
-      - label: Description of the area’s natural functions
+      - label: Description of the area's natural functions
         points: 2
       - label: Regulations that protect natural functions
         points: 2
       - label: Map of natural areas
         points: 3
+  - name: PPI Topic
+    subtopics:
+      - label: Lorem ipsum sit dolores amit maximus
+        points: 7
+  - name: PPI Topic
+    subtopics:
+      - label: Lorem ipsum sit dolores amit maximus
+        points: 7
+  - name: PPI Topic
+    subtopics:
+      - label: Lorem ipsum sit dolores amit maximus
+        points: 7
+  - name: PPI Topic
+    subtopics:
+      - label: Lorem ipsum sit dolores amit maximus
+        points: 7
 ---
 
 <table class="table table-sm table-bordered worksheet-table mb-0">
@@ -105,7 +121,7 @@ webtopics:
       <th class="bg-bg-blue align-middle" scope="col">Topic</th>
       <th class="bg-bg-blue align-middle" scope="col">Subtopic</th>
       <th class="bg-bg-blue align-middle text-center" scope="col">Max Pts</th>
-      <th class="bg-bg-blue align-middle text-center" scope="col">Score</th>
+      <th class="bg-bg-blue align-middle text-center" scope="col" style="width:10px;">Score</th>
     </tr>
   </thead>
   <tbody>
@@ -118,14 +134,24 @@ webtopics:
           <th class="align-top" scope="row" rowspan="{{ topic.subtopics | size }}">{{ outerloop }}. {{ topic.name }}</th>
         {% endif %}
         <td class="align-middle">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}" value="option{{ forloop.index }}" onchange="toggleRow(this)">
-            <label class="form-check-label" for="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}">{{ subtopic.label }}</label>
-          </div>
+          {% if topic.name == 'PPI Topic' %}
+            <input type="text" class="form-control" id="inputDesc" placeholder="Description">
+          {% else %}
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}" value="option{{ forloop.index }}" onchange="toggleRow(this)">
+              <label class="form-check-label" for="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}">{{ subtopic.label }}</label>
+            </div>
+          {% endif %}
         </td>
         <td data-subtopic-points="{{ subtopic.points }}" class="text-center text-muted align-middle">{{ subtopic.points }}</td>
         {% if forloop.first %}
-          <td rowspan="{{ num_subtopics }}" class="text-center align-middle">0</td>
+          <td rowspan="{{ num_subtopics }}" class="text-center align-middle">
+            {% if topic.name == 'PPI Topic' %}
+              <input type="text" class="form-control text-center" id="inputPts" placeholder="0">
+            {% else %}
+              0
+            {% endif %}
+          </td>
         {% endif %}
       </tr>
     {% endfor %}
