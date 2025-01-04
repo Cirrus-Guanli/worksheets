@@ -36,16 +36,4 @@ eleventyExcludeFromCollections: true
   </dl>
 </section>
 
-<section>
-  <h2>In Progress</h2>
-  <dl>
-    <dt class="mb-1">
-      Concepts
-    </dt>
-    {% for page in collections.other %}
-      <dd class="pl-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
-    {% endfor %}
-  </dl>
-</section>
-
 </div>
