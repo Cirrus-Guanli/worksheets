@@ -262,14 +262,9 @@ fmptopics:
         <td class="text-center align-middle text-muted">{{ step.points }}</td>
         <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
           {% unless step.has_substeps == true %}
-          <label for="score_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
-          {% if step.label == 'c. Review of all damaged buildings/flood insurance claims. RL Category: [A,B,C]' %}
-          <input type="text" class="form-control form-control-sm text-center" id="sp_t{{ outerloop }}-s{{ forloop.index }}"
-            placeholder="pts" disabled>
-          {% else %}
+            <label for="score_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
             <input type="text" inputmode="numeric" pattern="[0-{{ step.points }}]+"
               class="form-control form-control-sm text-center" id="score_t{{ outerloop }}-s{{ forloop.index }}" placeholder="0">
-          {% endif %}
           {% endunless %}
         </td>
       </tr>
