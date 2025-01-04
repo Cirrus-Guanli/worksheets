@@ -86,6 +86,9 @@ body {
 .material-symbols-outlined {
   cursor: pointer;
 }
+tr:focus-within {
+  background: var(--yellow-highlight);
+}
 
 
 /* STYLES TO OVERRIDE BOOTSTRAP */
