@@ -141,9 +141,11 @@ webtopics:
     {% for subtopic in topic.subtopics %}
       <tr>
         {% if forloop.first %}
-          <th class="align-top" scope="row" rowspan="{{ topic.subtopics | size }}">
+          <th {% if topic.name == 'PPI Topic' %}class="align-middle"{% else %}class="align-top"{% endif %} scope="row" rowspan="{{ topic.subtopics | size }}">
             {{ outerloop }}. {{ topic.name }}
-            <div class="font-weight-normal text-muted">Maximum points: {{ topic.maxpoints }}</div>
+            {% unless topic.name == 'PPI Topic' %}
+              <div class="font-weight-normal text-muted">Maximum points: {{ topic.maxpoints }}</div>
+            {% endunless %}
           </th>
         {% endif %}
         <td class="align-middle">
