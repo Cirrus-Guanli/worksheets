@@ -130,7 +130,7 @@ fmptopics:
   - name: Set goals
     maxpoints: 2
     steps:
-      - label: '[REQUIRED]'
+      - label: 
         points: 2
         has_substeps: false
         is_substep: false
@@ -220,10 +220,10 @@ fmptopics:
 
 {% assign alphabet = "abcdefghijklmnopqrstuvwxyz" | split: "" %}
 
-<form>
-  <div class="form-group mb-2">
-    <label for="inputPassword2" class="sr-only">Name of the Plan</label>
-    <input type="text" class="form-control" id="inputPassword2" placeholder="Name of the Plan">
+<form class="row mt-4">
+  <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10 form-group mb-2">
+    <label for="inputPassword2" class="sr-only">Insert Name of the Plan</label>
+    <input type="text" class="browser-default form-control" id="inputPassword2" placeholder="Insert Name of the Plan" autofocus>
   </div>
 </form>
 
@@ -240,41 +240,75 @@ fmptopics:
   <tbody>
   {% for topic in fmptopics %}
     {% assign outerloop = forloop.index %}
-    {% for step in topic.steps %}
-      {% if forloop.first %}
-        <tr>
-          <th class="align-top">{{ outerloop }}. {{ topic.name }} <span
-            class="font-weight-normal text-muted">(Maximum points: {{ topic.maxpoints }})</span>
-          </th>
-          <td class="emptycell">&nbsp;</td>
-          <td class="emptycell">&nbsp;</td>
-          <td class="emptycell">&nbsp;</td>
-        </tr>
+    {% assign stepsSize = topic.steps | size %}
+      {% if stepsSize > 1 %}
+        {% for step in topic.steps %}
+          {% if forloop.first %}
+            <tr>
+              <th colspan="4" class="align-top">{{ outerloop }}. {{ topic.name }} <span
+                class="font-weight-normal text-muted">(Maximum points: {{ topic.maxpoints }})</span>
+              </th>
+            </tr>
+          {% endif %}
+          <tr>
+            <td class="align-middle{% if step.is_substep == true %} pl-5{% else %} pl-4{% endif %}">
+              {{ step.label }}{% if step.has_substeps == true %} <span class="text-muted">(Maximum points: {{ step.points }})</span>{% endif %}
+            </td>
+            <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
+              {%  unless step.has_substeps == true %}
+                <label for="sp_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
+                  <input type="text" class="browser-default form-control browser-default form-control-sm" id="sp_t{{ outerloop }}-s{{ forloop.index }}" placeholder="{% if outerloop == 9 %}{{ 'Insert Adoption Date' }}{% endif %}">
+              {% endunless %}
+            </td>
+            <td class="text-center align-middle text-muted{% if step.has_substeps == true %} emptycell{% endif %}">
+              {% unless step.has_substeps == true %}{{ step.points }}{% endunless %}
+            </td>
+            <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
+              {% unless step.has_substeps == true %}
+                <label for="score_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
+                <input type="text" inputmode="numeric" pattern="[0-{{ step.points }}]+"
+                  class="browser-default form-control browser-default form-control-sm text-center" id="score_t{{ outerloop }}-s{{ forloop.index }}" placeholder="0">
+              {% endunless %}
+            </td>
+          </tr>
+          {% if forloop.last %}
+            <tr>
+              <td colspan="3" class="font-weight-bold text-right">Step {{ outerloop }}:</td>
+              <td class="font-weight-bold text-center">0</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for step in topic.steps %}
+          <tr>
+            <th class="align-top">{{ outerloop }}. {{ topic.name }} <span
+              class="font-weight-normal text-muted">(Maximum points: {{ topic.maxpoints }})</span>
+            </th>
+            <td class="text-center align-middle">
+              {%  unless step.has_substeps == true %}
+                <label for="sp_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
+                  <input type="text" class="browser-default form-control browser-default form-control-sm" id="sp_t{{ outerloop }}-s{{ forloop.index }}" placeholder="{% if outerloop == 9 %}{{ 'Insert Adoption Date' }}{% endif %}">
+              {% endunless %}
+            </td>
+            <td class="text-center align-middle text-muted">
+              {% unless step.has_substeps == true %}{{ step.points }}{% endunless %}
+            </td>
+            <td class="text-center align-middle">
+              {% unless step.has_substeps == true %}
+                <label for="score_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
+                <input type="text" inputmode="numeric" pattern="[0-{{ step.points }}]+"
+                  class="browser-default form-control browser-default form-control-sm text-center" id="score_t{{ outerloop }}-s{{ forloop.index }}" placeholder="0">
+              {% endunless %}
+            </td>
+          </tr>
+          {% if forloop.last %}
+            <tr>
+              <td colspan="3" class="font-weight-bold text-right">Step {{ outerloop }}:</td>
+              <td class="font-weight-bold text-center">0</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
       {% endif %}
-      <tr>
-        <td class="align-middle{% if step.is_substep == true %} pl-5{% else %} pl-4{% endif %}">{{ step.label }}</td>
-        <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
-          {%  unless step.has_substeps == true %}
-            <label for="sp_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
-              <input type="text" class="form-control form-control-sm" id="sp_t{{ outerloop }}-s{{ forloop.index }}" placeholder="{% if outerloop == 9 %}{{ 'Insert Adoption Date' }}{% endif %}">
-          {% endunless %}
-        </td>
-        <td class="text-center align-middle text-muted">{{ step.points }}</td>
-        <td class="text-center align-middle{% if step.has_substeps == true %} emptycell{% endif %}">
-          {% unless step.has_substeps == true %}
-            <label for="score_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
-            <input type="text" inputmode="numeric" pattern="[0-{{ step.points }}]+"
-              class="form-control form-control-sm text-center" id="score_t{{ outerloop }}-s{{ forloop.index }}" placeholder="0">
-          {% endunless %}
-        </td>
-      </tr>
-      {% if forloop.last %}
-        <tr>
-          <td colspan="3" class="font-weight-bold text-right">Step {{ outerloop }}:</td>
-          <td class="font-weight-bold text-center">0</td>
-        </tr>
-      {% endif %}
-    {% endfor %}
   {% endfor %}
   </tbody>
   <tfoot>

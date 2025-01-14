@@ -148,7 +148,7 @@ webtopics:
         {% endif %}
         <td class="align-middle">
           {% if topic.name == 'PPI Topic' %}
-            <input type="text" class="form-control" id="inputDesc" placeholder="Description">
+            <input type="text" class="browser-default form-control" id="inputDesc" placeholder="Description">
           {% else %}
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}" value="option{{ forloop.index }}" onchange="toggleRow(this)">
@@ -160,7 +160,7 @@ webtopics:
         {% if forloop.first %}
           <td rowspan="{{ num_subtopics }}" class="text-center align-middle">
             {% if topic.name == 'PPI Topic' %}
-              <input type="text" class="form-control text-center" id="inputPts" placeholder="0">
+              <input type="text" class="browser-default form-control text-center" id="inputPts" placeholder="0">
             {% else %}
               0
             {% endif %}

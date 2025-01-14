@@ -1,5 +1,6 @@
 <header class="d-flex justify-content-between align-items-center mb-2">
   <div>
+  {% if sheet_type == "modal" %}
     <button
       type="button"
       class="btn btn-sm btn-outline-secondary"
@@ -8,8 +9,11 @@
     >
       + Add {% if title == '530Credit • Flood Protection Credit Calculation Worksheet' %}Building{% else %}Project{% endif %}
     </button>
-    <a href="#" class="btn btn-sm btn-link text-danger" data-toggle="modal"
-    data-target="#exampleModal3">Delete All</a>
+  {% endif %}
+    <button class="btn btn-sm btn-link text-danger" data-toggle="modal"
+    data-target="#exampleModal3">Delete All</button>
   </div>
-  <i class="material-icons material-symbols-outlined text-black-50">print</i>
+  <a href="#" title="Print">
+    <i class="material-icons material-symbols-outlined text-black-50">print</i>
+  </a>
 </header>

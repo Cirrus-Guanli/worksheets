@@ -6,9 +6,7 @@ layout: layouts/base.liquid
 {% include "partials/subheader.liquid" %}
 
 <div class="container-fluid my-3">
-  {% if sheet_type == "modal" %}
-    {% include "partials/worksheet-table-actions.liquid" %}
-  {% endif %}
+  {% include "partials/worksheet-table-actions.liquid" %}
   {{ content }}
 </div>
 
