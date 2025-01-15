@@ -1,0 +1,39 @@
+/* STYLES TO OVERRIDE MATERIALIZE */
+.btn {
+  box-shadow: unset;
+  text-transform: capitalize;
+  letter-spacing: unset;
+}
+.btn:hover, .btn:focus {
+  box-shadow: unset;
+  text-transform: capitalize;
+  background-color: unset;
+}
+.form-check-input[type=checkbox] {
+  opacity: 1;
+  pointer-events: initial;
+}
+.form-check-input[type=checkbox] + label {
+  color: inherit;
+  padding-left: 0;
+}
+.form-check-input[type=checkbox] + label:before, .form-check-input[type=checkbox] + label:after {
+  display: none;
+}
+.modal-open .modal {
+  margin: 0;
+  right: unset;
+  will-change: unset;
+  background-color: unset;
+  border-radius: unset;
+  box-shadow: unset;
+}
+.modal .modal-content {
+  padding: unset;
+}
+.modal .modal-footer {
+  background-color: unset;
+}
+.modal .modal-footer .btn {
+  margin-block: 0;
+}

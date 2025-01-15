@@ -91,32 +91,6 @@ tr:focus-within {
 }
 
 
-/* STYLES TO OVERRIDE MATERIALIZE */
-.btn {
-  box-shadow: unset;
-  text-transform: capitalize;
-  letter-spacing: unset;
-}
-.btn:hover, .btn:focus {
-  box-shadow: unset;
-  text-transform: capitalize;
-}
-.btn:is(.btn-link) {
-  background-color: initial;
-}
-.form-check-input[type=checkbox] {
-  opacity: 1;
-  pointer-events: initial;
-}
-.form-check-input[type=checkbox] + label {
-  color: inherit;
-  padding-left: 0;
-}
-.form-check-input[type=checkbox] + label:before, .form-check-input[type=checkbox] + label:after {
-  display: none;
-}
-
-
 /* STYLES TO OVERRIDE BOOTSTRAP */
 /* yellow hover state */
 .table-hover tbody tr:hover {
