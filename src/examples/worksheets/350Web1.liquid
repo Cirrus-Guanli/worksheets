@@ -152,7 +152,7 @@ webtopics:
           {% if topic.name == 'PPI Topic' %}
             <input type="text" class="browser-default form-control" id="inputDesc" placeholder="Description">
           {% else %}
-            <div class="form-check form-check-inline">
+            <div class="form-check">
               <input class="form-check-input" type="checkbox" id="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}" value="option{{ forloop.index }}" onchange="toggleRow(this)">
               <label class="form-check-label" for="inlineCheckbox_{{ outerloop }}-{{ forloop.index }}">{{ subtopic.label }}</label>
             </div>
