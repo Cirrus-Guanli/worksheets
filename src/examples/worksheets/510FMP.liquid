@@ -251,25 +251,27 @@ fmptopics:
             </tr>
           {% endif %}
           <tr>
-            <td class="align-middle{% if step.is_substep == true %} pl-5{% else %} pl-4{% endif %}">
-              {{ step.label }}{% if step.has_substeps == true %} <span class="text-muted">(Maximum points: {{ step.points }})</span>{% endif %}
-            </td>
-            <td class="text-center align-middle">
-              {%  unless step.has_substeps == true %}
-                <label for="sp_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
+            {% if step.has_substeps == true %}
+              <td colspan="4" class="align-middle{% if step.is_substep == true %} pl-5{% else %} pl-4{% endif %}">
+                {{ step.label }} <span class="text-muted">(Maximum points: {{ step.points }})</span>
+              </td>
+            {% else %}
+              <td class="align-middle{% if step.is_substep == true %} pl-5{% else %} pl-4{% endif %}">
+                {{ step.label }} <span class="text-muted">(Maximum points: {{ step.points }})</span>
+              </td>
+              <td class="text-center align-middle">
+                  <label for="sp_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
                   <input type="text" class="browser-default form-control browser-default form-control-sm" id="sp_t{{ outerloop }}-s{{ forloop.index }}" placeholder="{% if outerloop == 9 %}{{ 'Insert Adoption Date' }}{% endif %}">
-              {% endunless %}
-            </td>
-            <td class="text-center align-middle text-muted">
-              {% unless step.has_substeps == true %}{{ step.points }}{% endunless %}
-            </td>
-            <td class="text-center align-middle">
-              {% unless step.has_substeps == true %}
+              </td>
+              <td class="text-center align-middle text-muted">
+                {{ step.points }}
+              </td>
+              <td class="text-center align-middle">
                 <label for="score_t{{ outerloop }}-s{{ forloop.index }}" class="sr-only">Example label</label>
                 <input type="text" inputmode="numeric" pattern="[0-{{ step.points }}]+"
                   class="browser-default form-control browser-default form-control-sm text-center" id="score_t{{ outerloop }}-s{{ forloop.index }}" placeholder="0">
-              {% endunless %}
-            </td>
+              </td>
+            {% endif %}
           </tr>
           {% if forloop.last %}
             <tr>
