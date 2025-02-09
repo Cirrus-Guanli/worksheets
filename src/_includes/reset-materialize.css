@@ -37,3 +37,11 @@
 .modal .modal-footer .btn {
   margin-block: 0;
 }
+td, th {
+  padding: unset;
+  text-align: unset;
+  border-radius: unset;
+}
+.row {
+  margin-bottom: unset;
+}
