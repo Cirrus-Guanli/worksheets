@@ -95,9 +95,7 @@ body {
 tr:focus-within {
   background: var(--yellow-highlight);
 }
-.option1-selected #table-option1, .option1-selected fieldset.option1, .option2-selected #table-option2, .option2-selected fieldset.option2 {
-  display: block;
-}
+
 .table:not(.active) {
   display: none;
 }

@@ -250,7 +250,7 @@ fpcccitems:
       <th class="text-center">TU<br>(Technique Used)</th>
       <th>Building Type</th>
       <th class="text-center"># of Buildings</th>
-      <th class="text-center">No. of Buildings w/ FMA Multiplier and TU</th>
+      <th class="text-center" style="width:min-content;">No. of Buildings w/ FMA Multiplier and TU</th>
     </tr>
   </thead>
   <tbody>
@@ -264,7 +264,7 @@ fpcccitems:
       <td class="text-center">{{ item.tu }}</td>
       <td>{{ item.building_type }}</td>
       <td class="text-center">{{ item.num_of_buildings }}</td>
-      <td class="text-center">{{ item.num_buildings_fma_and_tu }}</td>
+      <td class="text-center" style="width:min-content;">{{ item.num_buildings_fma_and_tu }}</td>
     </tr>
     {% endfor %}
   </tbody>
@@ -295,7 +295,7 @@ fpcccitems:
       <th class="text-center">PB<br>(TU x FPI)</th>
       <th>Building Type</th>
       <th class="text-center"># of Buildings</th>
-      <th class="text-center">PB w/ FMA Multiplier</th>
+      <th class="text-center" style="width:min-content;">PB w/ FMA Multiplier</th>
     </tr>
   </thead>
   <tbody>
@@ -313,7 +313,7 @@ fpcccitems:
       <td class="text-center">{{ item.pb }}</td>
       <td>{{ item.building_type }}</td>
       <td class="text-center">{{ item.num_of_buildings }}</td>
-      <td class="text-center">{{ item.pb_fma_multiplier }}</td>
+      <td class="text-center" style="width:min-content;">{{ item.pb_fma_multiplier }}</td>
     </tr>
     {% endfor %}
   </tbody>
