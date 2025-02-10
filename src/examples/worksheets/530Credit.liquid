@@ -1,5 +1,5 @@
 ---
-title: 530Credit • Flood Protection Credit Calculation Worksheet
+title: 530Credit • Flood Protection Credit Worksheet
 sheet_type: modal
 fpcccitems:
   - address: 1924 Lorraine Place
@@ -247,9 +247,9 @@ fpcccitems:
       <th class="text-center">Bldg #</th>
       <th>Address</th>
       <th class="text-center">FMA Grant?</th>
-      <th class="text-center">TU<br>(Technique Used)</th>
+      <th class="text-center">TU_ <br>(Technique Used)</th>
       <th>Building Type</th>
-      <th class="text-center"># of Buildings</th>
+      <th class="text-center">No. of Buildings</th>
       <th class="text-center" style="width:min-content;">No. of Buildings w/ FMA Multiplier and TU</th>
     </tr>
   </thead>
@@ -258,7 +258,7 @@ fpcccitems:
     <tr>
       <td class="text-center text-text-ph"><span class="material-symbols-outlined">delete</span><span data-toggle="modal"
     data-target="#exampleModal2" class="ml-2  material-symbols-outlined">edit</span></td>
-      <td class="text-center"><strong>OP#{{ forloop.index }}</strong></td>
+      <td class="text-center"><strong>{{ forloop.index }}</strong></td>
       <td>{{ item.address }}</td>
       <td class="text-center">{{ item.fma_grant? }}</td>
       <td class="text-center">{{ item.tu }}</td>
@@ -270,7 +270,7 @@ fpcccitems:
   </tbody>
 <tfoot>
     <tr>
-      <td scope="row" colspan="7" class="text-right text-purple mr-3"><strong>Option 1:</strong><span class="d-block text-muted">c530 = 2.4 x Total # of Buildings that qualify x Technique Used (TU)</span></td>
+      <td scope="row" colspan="7" class="text-right text-purple mr-3"><strong>Option 1:</strong><span class="d-block text-muted">c530 = 2.4 x Total No. of Buildings that qualify x Technique Used (TU)</span></td>
       <td scope="row" class="text-center text-purple align-middle font-weight-bold">0</td>
     </tr>
   </tfoot>
@@ -291,10 +291,10 @@ fpcccitems:
       <th class="text-center">FPP<br>(Post-Project)</th>
       <th class="text-center">FPB<br>(Pre-Project)</th>
       <th class="text-center">FPI<br>(FPP - FBP)</th>
-      <th class="text-center">TU<br>(Technique Used)</th>
+      <th class="text-center">TU_ <br>(Technique Used)</th>
       <th class="text-center">PB<br>(TU x FPI)</th>
       <th>Building Type</th>
-      <th class="text-center"># of Buildings</th>
+      <th class="text-center">No. of Buildings</th>
       <th class="text-center" style="width:min-content;">PB w/ FMA Multiplier</th>
     </tr>
   </thead>
@@ -303,7 +303,7 @@ fpcccitems:
     <tr>
       <td class="text-center text-text-ph"><span class="material-symbols-outlined">delete</span><span data-toggle="modal"
     data-target="#exampleModal2" class="ml-2  material-symbols-outlined">edit</span></td>
-      <td class="text-center"><strong>OP#{{ forloop.index }}</strong></td>
+      <td class="text-center"><strong>{{ forloop.index }}</strong></td>
       <td>{{ item.address }}</td>
       <td class="text-center">{{ item.fma_grant? }}</td>
       <td class="text-center">{{ item.fpp }}</td>
@@ -319,7 +319,7 @@ fpcccitems:
   </tbody>
 <tfoot>
     <tr>
-      <td scope="row" colspan="11" class="text-right text-purple mr-3"><strong>Option 2:</strong><span class="d-block text-muted">c530 = 16 x SPB x 100 / bSF</span></td>
+      <td scope="row" colspan="11" class="text-right text-purple mr-3"><strong>Option 2:</strong><span class="d-block text-muted">c530 = 16 x ΣPB x 100 / bSF</span></td>
       <td scope="row" class="text-center text-purple align-middle font-weight-bold">0</td>
     </tr>
   </tfoot>
@@ -371,37 +371,41 @@ fpcccitems:
             </select>
           </fieldset>
           <fieldset class="mb-2 px-3 pb-3 pt-1">
-            <legend>TU (Technique Used)</legend>
+            <legend>TU_ (Technique Used)</legend>
             <label for="formGroupExampleInput2" class="sr-only">TU (Technique Used)</label>
-            <input
-              type="text"
-              inputmode="numeric"
-              class="browser-default form-control"
-              id="formGroupExampleInput2"
-              placeholder="Enter a number"
-            />
+            <select class="custom-select">
+              <option disabled selected value> -- select -- </option>
+              <option value="TUE Elevation">TUE Elevation 1.0</option>
+              <option value="TUD Dry floodproofing">TUD Dry floodproofing 1.0</option>
+              <option value="TUW Wet floodproofing">TUW Wet floodproofing 1.0</option>
+              <option value="TUS Sewer backup">TUS Sewer backup 1.0</option>
+              <option value="TUB Barrier, levee, or floodwall">TUB Barrier, levee, or floodwall 1.0</option>
+              <option value="TUC Channel modification, storm sewer improvements, diversions">TUC Channel modification, storm sewer improvements, diversions 1.0</option>
+              <option value="TUF Storage facilities">TUF Storage facilities 1.0</option>
+            </select>
           </fieldset>
           <fieldset class="mb-2 px-3 pb-3 pt-1">
             <legend>Building Type</legend>
             <div class="form-group mb-0">
               <label for="formGroupExampleInput2" class="sr-only">Building Type</label>
               <select class="custom-select">
-                <option selected value="Regular building in the SFHA">Regular building in the SFHA</option>
-                <option selected value="Repetitive Loss building in the SFHA">Repetitive Loss building in the SFHA</option>
-                <option selected value="Repetitive Loss building in the X Zone">Repetitive Loss building in the X Zone</option>
-                <option selected value="Severe Repetitive Loss building in the SFHA">Severe Repetitive Loss building in the SFHA
+                <option disabled selected value> -- select -- </option>
+                <option value="Regular building in the SFHA">Regular building in the SFHA</option>
+                <option value="Repetitive Loss building in the SFHA">Repetitive Loss building in the SFHA</option>
+                <option value="Repetitive Loss building in the X Zone">Repetitive Loss building in the X Zone</option>
+                <option value="Severe Repetitive Loss building in the SFHA">Severe Repetitive Loss building in the SFHA
                 </option>
-                <option selected value="Severe Repetitive Loss building in the X Zone">Severe Repetitive Loss building in the X Zone
+                <option value="Severe Repetitive Loss building in the X Zone">Severe Repetitive Loss building in the X Zone
                 </option>
-                <option selected value="Critical Facility protected to the 500yr flood level">Critical Facility protected to the
+                <option value="Critical Facility protected to the 500yr flood level">Critical Facility protected to the
                   500yr flood level</option>
-                <option selected value="Other Critical Facility">Other Critical Facility</option>
+                <option value="Other Critical Facility">Other Critical Facility</option>
               </select>
             </div>
           </fieldset>
           <fieldset class="mb-2 px-3 pb-3 pt-1">
-            <legend># of Buildings</legend>
-            <label for="formGroupExampleInput2" class="sr-only"># of Buildings</label>
+            <legend>No. of Buildings</legend>
+            <label for="formGroupExampleInput2" class="sr-only">No. of Buildings</label>
             <input
               type="text"
               inputmode="numeric"
@@ -410,15 +414,9 @@ fpcccitems:
               placeholder="Enter a number"
             />
           </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1 option1-field">
-            <legend># of Buildings w/ FMA Multiplier & TU</legend>
-            <label for="formGroupExampleInput2" class="sr-only"># of Buildings w/ FMA Multiplier & TU</label>
-            <input type="text" inputmode="numeric" class="browser-default form-control" id="formGroupExampleInput2"
-              placeholder="Enter a number" />
-          </fieldset>
         </div>
         <div class="modal-footer">
-          <span class="btn btn-link" data-dismiss="modal">Cancel</span>
+          <span class="btn btn-link text-dark" data-dismiss="modal">Cancel</span>
           <button type="button" class="btn btn-purple" data-dismiss="modal">
             Add
           </button>
@@ -494,60 +492,42 @@ fpcccitems:
               placeholder="Enter a number"
             />
           </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1 option2-field">
-            <legend>FPI (FPP - FBP)</legend>
-            <label for="formGroupExampleInput2" class="sr-only">FPI (FPP - FBP)</label>
-            <input
-              type="text"
-              inputmode="numeric"
-              class="browser-default form-control"
-              id="formGroupExampleInput2"
-              placeholder="Enter a number"
-            />
-          </fieldset>
           <fieldset class="mb-2 px-3 pb-3 pt-1">
-            <legend>TU (Technique Used)</legend>
+            <legend>TU_ (Technique Used)</legend>
             <label for="formGroupExampleInput2" class="sr-only">TU (Technique Used)</label>
-            <input
-              type="text"
-              inputmode="numeric"
-              class="browser-default form-control"
-              id="formGroupExampleInput2"
-              placeholder="Enter a number"
-            />
-          </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1 option2-field">
-            <legend>PB (TU x FPI)</legend>
-            <label for="formGroupExampleInput2" class="sr-only">PB (TU x FPI)</label>
-            <input
-              type="text"
-              inputmode="numeric"
-              class="browser-default form-control"
-              id="formGroupExampleInput2"
-              placeholder="Enter a number"
-            />
+              <select class="custom-select">
+                <option disabled selected value> -- select -- </option>
+                <option value="TUE Elevation">TUE Elevation 1.0</option>
+                <option value="TUD Dry floodproofing">TUD Dry floodproofing 1.0</option>
+                <option value="TUW Wet floodproofing">TUW Wet floodproofing 1.0</option>
+                <option value="TUS Sewer backup">TUS Sewer backup 1.0</option>
+                <option value="TUB Barrier, levee, or floodwall">TUB Barrier, levee, or floodwall 1.0</option>
+                <option value="TUC Channel modification, storm sewer improvements, diversions">TUC Channel modification, storm sewer improvements, diversions 1.0</option>
+                <option value="TUF Storage facilities">TUF Storage facilities 1.0</option>
+              </select>
           </fieldset>
           <fieldset class="mb-2 px-3 pb-3 pt-1">
             <legend>Building Type</legend>
             <div class="form-group mb-0">
               <label for="formGroupExampleInput2" class="sr-only">Building Type</label>
               <select class="custom-select">
-                <option selected value="Regular building in the SFHA">Regular building in the SFHA</option>
-                <option selected value="Repetitive Loss building in the SFHA">Repetitive Loss building in the SFHA</option>
-                <option selected value="Repetitive Loss building in the X Zone">Repetitive Loss building in the X Zone</option>
-                <option selected value="Severe Repetitive Loss building in the SFHA">Severe Repetitive Loss building in the SFHA
+                <option disabled selected value> -- select -- </option>
+                <option value="Regular building in the SFHA">Regular building in the SFHA</option>
+                <option value="Repetitive Loss building in the SFHA">Repetitive Loss building in the SFHA</option>
+                <option value="Repetitive Loss building in the X Zone">Repetitive Loss building in the X Zone</option>
+                <option value="Severe Repetitive Loss building in the SFHA">Severe Repetitive Loss building in the SFHA
                 </option>
-                <option selected value="Severe Repetitive Loss building in the X Zone">Severe Repetitive Loss building in the X Zone
+                <option value="Severe Repetitive Loss building in the X Zone">Severe Repetitive Loss building in the X Zone
                 </option>
-                <option selected value="Critical Facility protected to the 500yr flood level">Critical Facility protected to the
+                <option value="Critical Facility protected to the 500yr flood level">Critical Facility protected to the
                   500yr flood level</option>
-                <option selected value="Other Critical Facility">Other Critical Facility</option>
+                <option value="Other Critical Facility">Other Critical Facility</option>
               </select>
             </div>
           </fieldset>
           <fieldset class="mb-2 px-3 pb-3 pt-1">
-            <legend># of Buildings</legend>
-            <label for="formGroupExampleInput2" class="sr-only"># of Buildings</label>
+            <legend>No. of Buildings</legend>
+            <label for="formGroupExampleInput2" class="sr-only">No. of Buildings</label>
             <input
               type="text"
               inputmode="numeric"
@@ -556,15 +536,9 @@ fpcccitems:
               placeholder="Enter a number"
             />
           </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1 option2-field">
-            <legend>PB w/ FMA Multiplier</legend>
-            <label for="formGroupExampleInput2" class="sr-only">PB w/ FMA Multiplier</label>
-            <input type="text" inputmode="numeric" class="browser-default form-control" id="formGroupExampleInput2"
-              placeholder="Enter a number" />
-          </fieldset>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-link text-dark" data-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-purple" data-dismiss="modal">
             Add
           </button>
