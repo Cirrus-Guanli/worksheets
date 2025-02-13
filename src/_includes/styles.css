@@ -96,12 +96,15 @@ tr:focus-within {
   background: var(--yellow-highlight);
 }
 
-.table:not(.active) {
+[id*="table-"]:not(.active) {
   display: none;
 }
 
 
 /* STYLES TO OVERRIDE BOOTSTRAP */
+#brand:hover {
+ text-decoration: none;
+}
 /* yellow hover state */
 .table-hover tbody tr:hover {
   background-color: var(--yellow-highlight);
