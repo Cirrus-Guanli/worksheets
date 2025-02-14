@@ -326,10 +326,11 @@ fpcccitems:
 </table>
 
 {% block modal %}
+
   <!-- Modal -->
   <div
     class="modal fade"
-    id="modal-1"
+    id="modal-530"
     tabindex="-1"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -369,128 +370,6 @@ fpcccitems:
               <option selected value="N">No</option>
               <option value="Y">Yes</option>
             </select>
-          </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
-            <legend>TU_ (Technique Used)</legend>
-            <label for="formGroupExampleInput2" class="sr-only">TU (Technique Used)</label>
-            <select class="custom-select">
-              <option disabled selected value> -- select -- </option>
-              <option value="TUE Elevation">TUE Elevation 1.0</option>
-              <option value="TUD Dry floodproofing">TUD Dry floodproofing 1.0</option>
-              <option value="TUW Wet floodproofing">TUW Wet floodproofing 1.0</option>
-              <option value="TUS Sewer backup">TUS Sewer backup 1.0</option>
-              <option value="TUB Barrier, levee, or floodwall">TUB Barrier, levee, or floodwall 1.0</option>
-              <option value="TUC Channel modification, storm sewer improvements, diversions">TUC Channel modification, storm sewer improvements, diversions 1.0</option>
-              <option value="TUF Storage facilities">TUF Storage facilities 1.0</option>
-            </select>
-          </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
-            <legend>Building Type</legend>
-            <div class="form-group mb-0">
-              <label for="formGroupExampleInput2" class="sr-only">Building Type</label>
-              <select class="custom-select">
-                <option disabled selected value> -- select -- </option>
-                <option value="Regular building in the SFHA">Regular building in the SFHA</option>
-                <option value="Repetitive Loss building in the SFHA">Repetitive Loss building in the SFHA</option>
-                <option value="Repetitive Loss building in the X Zone">Repetitive Loss building in the X Zone</option>
-                <option value="Severe Repetitive Loss building in the SFHA">Severe Repetitive Loss building in the SFHA
-                </option>
-                <option value="Severe Repetitive Loss building in the X Zone">Severe Repetitive Loss building in the X Zone
-                </option>
-                <option value="Critical Facility protected to the 500yr flood level">Critical Facility protected to the
-                  500yr flood level</option>
-                <option value="Other Critical Facility">Other Critical Facility</option>
-              </select>
-            </div>
-          </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
-            <legend>No. of Buildings</legend>
-            <label for="formGroupExampleInput2" class="sr-only">No. of Buildings</label>
-            <input
-              type="text"
-              inputmode="numeric"
-              class="browser-default form-control"
-              id="formGroupExampleInput2"
-              placeholder="Enter a number"
-            />
-          </fieldset>
-        </div>
-        <div class="modal-footer">
-          <span class="btn btn-link text-dark" data-dismiss="modal">Cancel</span>
-          <button type="button" class="btn btn-purple" data-dismiss="modal">
-            Add
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal -->
-  <div
-    class="modal fade"
-    id="modal-2"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Building</h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
-            <legend>Address</legend>
-            <label for="formGroupExampleInput" class="sr-only"
-              >Address</label
-            >
-            <input
-              type="text"
-              class="browser-default form-control"
-              id="formGroupExampleInput"
-              placeholder="Enter the address"
-            />
-          </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
-            <legend>FMA Grant?</legend>
-            <label for="formGroupExampleInput2" class="sr-only"
-              >FMA Grant?</label
-            >
-            <select class="custom-select">
-              <option selected value="N">No</option>
-              <option value="Y">Yes</option>
-            </select>
-          </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1 option2-field">
-            <legend>FPP (Post-Project)</legend>
-            <label for="formGroupExampleInput" class="sr-only"
-              >FPP (Post-Project)</label
-            >
-            <input
-              type="text"
-              inputmode="numeric"
-              class="browser-default form-control"
-              id="formGroupExampleInput"
-              placeholder="Enter a number"
-            />
-          </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1 option2-field">
-            <legend>FPB (Pre-Project)</legend>
-            <label for="formGroupExampleInput2" class="sr-only">FPB (Pre-Project)</label>
-            <input
-              type="text"
-              inputmode="numeric"
-              class="browser-default form-control"
-              id="formGroupExampleInput2"
-              placeholder="Enter a number"
-            />
           </fieldset>
           <fieldset class="mb-2 px-3 pb-3 pt-1">
             <legend>TU_ (Technique Used)</legend>
@@ -525,9 +404,34 @@ fpcccitems:
               </select>
             </div>
           </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
+          <fieldset class="mb-4 px-3 pb-3 pt-1">
             <legend>No. of Buildings</legend>
             <label for="formGroupExampleInput2" class="sr-only">No. of Buildings</label>
+            <input
+              type="text"
+              inputmode="numeric"
+              class="browser-default form-control"
+              id="formGroupExampleInput2"
+              placeholder="Enter a number"
+            />
+          </fieldset>
+          <h5 class="px-3 mb-3 text-danger">**Option 2 Only</h5>
+          <fieldset class="mb-2 px-3 pb-3 pt-1 option2-field">
+            <legend>FPP (Post-Project)</legend>
+            <label for="formGroupExampleInput" class="sr-only"
+              >FPP (Post-Project)</label
+            >
+            <input
+              type="text"
+              inputmode="numeric"
+              class="browser-default form-control"
+              id="formGroupExampleInput"
+              placeholder="Enter a number"
+            />
+          </fieldset>
+          <fieldset class="mb-2 px-3 pb-3 pt-1 option2-field">
+            <legend>FPB (Pre-Project)</legend>
+            <label for="formGroupExampleInput2" class="sr-only">FPB (Pre-Project)</label>
             <input
               type="text"
               inputmode="numeric"
@@ -553,21 +457,17 @@ fpcccitems:
     document.addEventListener("DOMContentLoaded", function () {
       // Use querySelector with escaped ID: \\5 is how you escape 5
       const select = document.querySelector("[id='530select']");
-      const modalTrigger = document.getElementById("modal-trigger");
 
       function updateView() {
         const selected = select.value; // Get the selected option's value
 
-        // Remove "active" class from all tables and modals
+        // Remove "active" class from all tables
         document.querySelectorAll(".table, .modal").forEach(el => {
           el.classList.remove("active");
         });
 
-        // Add "active" class to the selected table and modal
+        // Add "active" class to the selected table
         document.getElementById(`table-${selected}`).classList.add("active");
-        document.getElementById(`modal-${selected}`).classList.add("active");
-
-        modalTrigger.setAttribute("data-target", `#modal-${selected}`);
       }
 
       // Set default view
