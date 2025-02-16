@@ -375,14 +375,35 @@ fpcccitems:
             <legend>TU_ (Technique Used)</legend>
             <label for="formGroupExampleInput2" class="sr-only">TU (Technique Used)</label>
               <select class="custom-select">
-                <option disabled selected value> -- select -- </option>
-                <option value="TUE Elevation">TUE Elevation 1.0</option>
-                <option value="TUD Dry floodproofing">TUD Dry floodproofing 1.0</option>
-                <option value="TUW Wet floodproofing">TUW Wet floodproofing 1.0</option>
-                <option value="TUS Sewer backup">TUS Sewer backup 1.0</option>
-                <option value="TUB Barrier, levee, or floodwall">TUB Barrier, levee, or floodwall 1.0</option>
-                <option value="TUC Channel modification, storm sewer improvements, diversions">TUC Channel modification, storm sewer improvements, diversions 1.0</option>
-                <option value="TUF Storage facilities">TUF Storage facilities 1.0</option>
+                <option value="" selected disabled>-- select --</option>
+                <optgroup label="TUE • Elevation">
+                  <option value="TUE 1.0">TUE 1.0</option>
+                </optgroup>
+                <optgroup label="TUD • Dry floodproofing">
+                  <option value="TUD = 0.6">TUD = 0.6</option>
+                  <option value="TUD = 0.4">TUD = 0.4</option>
+                  <option value="TUD = 0.2">TUD = 0.2</option>
+                </optgroup>
+                <optgroup label="TUW • Wet floodproofing">
+                  <option value="TUW = 0.5">TUW = 0.5</option>
+                  <option value="TUW = 0.3">TUW = 0.3</option>
+                  <option value="TUW = 0.2">TUW = 0.2</option>
+                </optgroup>
+                <optgroup label="TUS • Sewer backup">
+                  <option value="TUS = 0.2">TUS = 0.2</option>
+                  <option value="TUS = 0.1">TUS = 0.1</option>
+                </optgroup>
+                <optgroup label="TUB • Barrier, levee or floodwall">
+                  <option value="TUB = 0.8">TUB = 0.8</option>
+                  <option value="TUB = 0.4">TUB = 0.4</option>
+                </optgroup>
+                <optgroup label="TUC • Channel modification, storm sewer improvements, diversions">
+                  <option value="TUC = 0.8">TUC = 0.8</option>
+                  <option value="TUC = 0.7">TUC = 0.7</option>
+                </optgroup>
+                <optgroup label="TUF • Storage facilities">
+                  <option value="TUF 0.8">TUF 0.8</option>
+                </optgroup>
               </select>
           </fieldset>
           <fieldset class="mb-2 px-3 pb-3 pt-1">
