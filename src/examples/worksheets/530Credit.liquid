@@ -317,7 +317,7 @@ fpcccitems:
     </tr>
     {% endfor %}
   </tbody>
-<tfoot>
+  <tfoot>
     <tr>
       <td scope="row" colspan="11" class="text-right text-purple mr-3"><strong>Option 2:</strong><span class="d-block text-muted">c530 = 16 x ΣPB x 100 / bSF</span></td>
       <td scope="row" class="text-center text-purple align-middle font-weight-bold">0</td>
@@ -335,7 +335,7 @@ fpcccitems:
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Add Building</h5>
@@ -349,7 +349,7 @@ fpcccitems:
           </button>
         </div>
         <div class="modal-body">
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
+          <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>Address</legend>
             <label for="formGroupExampleInput" class="sr-only"
               >Address</label
@@ -361,7 +361,7 @@ fpcccitems:
               placeholder="Enter the address"
             />
           </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
+          <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>FMA Grant?</legend>
             <label for="formGroupExampleInput2" class="sr-only"
               >FMA Grant?</label
@@ -371,7 +371,7 @@ fpcccitems:
               <option value="Y">Yes</option>
             </select>
           </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
+          <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>TU_ (Technique Used)</legend>
             <label for="formGroupExampleInput2" class="sr-only">TU (Technique Used)</label>
               <select class="custom-select">
@@ -405,8 +405,76 @@ fpcccitems:
                   <option value="TUF 0.8">TUF 0.8</option>
                 </optgroup>
               </select>
+              <details class="mt-2">
+                <summary class="text-primary small">More info</summary>
+                <table class="table table-sm table-bordered table-dark">
+                  <tbody>
+                    <tr>
+                      <th scope="row" colspan="2">TUE  Elevation</th>
+                      <td class="text-monospace">1.0</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" rowspan="3">TUD  Dry floodproofing</th>
+                      <td>If the project was designed by a registered design professional and the design accounts for openings, internal drainage, seepage, and underdrainage</td>
+                      <td class="text-monospace">0.6</td>
+                    </tr>
+                    <tr>
+                      <td>If the project does not depend on human intervention to close openings; the project protects to a level less than 3 feet above the first floor; the design accounts for internal drainage, seepage, and underdrainage; and the building has no basement (i.e., any floor below grade on all sides).</td>
+                      <td class="text-monospace">0.4</td>
+                    </tr>
+                    <tr>
+                      <td>For all other cases, including those for which there is no documentation of how openings, interior drainage, seepage, or underdrainage are handled</td>
+                      <td class="text-monospace">0.2</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" rowspan="3">TUW  Wet floodproofing</th>
+                      <td>If the project was designed by a registered design professional.</td>
+                      <td class="text-monospace">0.5</td>
+                    </tr>
+                    <tr>
+                      <td>If the project was not designed by a registered design professional.</td>
+                      <td class="text-monospace">0.3</td>
+                    </tr>
+                    <tr>
+                      <td>If the furnace, water heater, electrical breaker box, and other utilities are relocated above flood level.</td>
+                      <td class="text-monospace">0.2</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" rowspan="2">TUS  Sewer backup</th>
+                      <td>If the building is located in the SFHA.</td>
+                      <td class="text-monospace">0.2</td>
+                    </tr>
+                    <tr>
+                      <td>For sewer backup prevention measures if the building is located outside of the SFHA and the community has a building code or other regulations that require positive drain sewers or other measures that prevent sewer backup into new buildings.</td>
+                      <td class="text-monospace">0.1</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" rowspan="2">TUB  Barrier, levee or floodwall</th>
+                      <td>If the barrier was designed, and the construction approved by a registered design professional, and the design accounts for interior drainage, seepage, and underdrainage.</td>
+                      <td class="text-monospace">0.8</td>
+                    </tr>
+                    <tr>
+                      <td>If the barrier was not designed by a registered design professional, but the design accounts for interior drainage, seepage, and underdrainage.</td>
+                      <td class="text-monospace">0.4</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" rowspan="2">TUC  Channel modification, storm sewer improvements, diversions</th>
+                      <td>If the project design provides at least one foot of clearance between the flood protection level and bridge decks, top of pipe, and other obstructions.</td>
+                      <td class="text-monospace">0.8</td>
+                    </tr>
+                    <tr>
+                      <td>For pump systems and all other cases.</td>
+                      <td class="text-monospace">0.7</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" colspan="2">TUF  Storage facilities</th>
+                      <td class="text-monospace">0.8</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
           </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1">
+          <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>Building Type</legend>
             <div class="form-group mb-0">
               <label for="formGroupExampleInput2" class="sr-only">Building Type</label>
@@ -425,7 +493,7 @@ fpcccitems:
               </select>
             </div>
           </fieldset>
-          <fieldset class="mb-4 px-3 pb-3 pt-1">
+          <fieldset class="border mb-4 px-3 pb-3 pt-1">
             <legend>No. of Buildings</legend>
             <label for="formGroupExampleInput2" class="sr-only">No. of Buildings</label>
             <input
@@ -437,7 +505,7 @@ fpcccitems:
             />
           </fieldset>
           <h5 class="px-3 mb-3 text-danger">**Option 2 Only</h5>
-          <fieldset class="mb-2 px-3 pb-3 pt-1 option2-field">
+          <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>FPP (Post-Project)</legend>
             <label for="formGroupExampleInput" class="sr-only"
               >FPP (Post-Project)</label
@@ -450,7 +518,7 @@ fpcccitems:
               placeholder="Enter a number"
             />
           </fieldset>
-          <fieldset class="mb-2 px-3 pb-3 pt-1 option2-field">
+          <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>FPB (Pre-Project)</legend>
             <label for="formGroupExampleInput2" class="sr-only">FPB (Pre-Project)</label>
             <input
@@ -483,7 +551,7 @@ fpcccitems:
         const selected = select.value; // Get the selected option's value
 
         // Remove "active" class from all tables
-        document.querySelectorAll(".table, .modal").forEach(el => {
+        document.querySelectorAll(".table").forEach(el => {
           el.classList.remove("active");
         });
 
