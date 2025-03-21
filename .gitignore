@@ -19,6 +19,3 @@ _tmp/
 
 # node modules
 node_modules/
-
-#npm stuff
-package-lock.json
