@@ -377,98 +377,100 @@ fpcccitems:
               <select class="custom-select">
                 <option value="" selected disabled>-- select --</option>
                 <optgroup label="TUE • Elevation">
-                  <option value="TUE 1.0">TUE 1.0</option>
+                  <option value="TUE 1.0">TUE = 1.0, if the building is elevated</option>
                 </optgroup>
                 <optgroup label="TUD • Dry floodproofing">
-                  <option value="TUD = 0.6">TUD = 0.6</option>
-                  <option value="TUD = 0.4">TUD = 0.4</option>
-                  <option value="TUD = 0.2">TUD = 0.2</option>
+                  <option value="TUD = 0.6">TUD = 0.6, if designed by a registered design professional with drainage provisions</option>
+                  <option value="TUD = 0.4">TUD = 0.4, if no human intervention required to close openings, 3 ft or less protection above first floor, drainage provisions, and no basement</option>
+                  <option value="TUD = 0.2">TUD= 0.2, for all other cases, including without documented drainage provisions</option>
                 </optgroup>
                 <optgroup label="TUW • Wet floodproofing">
-                  <option value="TUW = 0.5">TUW = 0.5</option>
-                  <option value="TUW = 0.3">TUW = 0.3</option>
-                  <option value="TUW = 0.2">TUW = 0.2</option>
+                  <option value="TUW = 0.5">TUW = 0.5, If designed by a registered design professional</option>
+                  <option value="TUW = 0.3">TUW = 0.3, if not designed by a registered design professional</option>
+                  <option value="TUW = 0.2">TUW = 0.2, if utilities are relocated above flood level</option>
                 </optgroup>
                 <optgroup label="TUS • Sewer backup">
-                  <option value="TUS = 0.2">TUS = 0.2</option>
-                  <option value="TUS = 0.1">TUS = 0.1</option>
+                  <option value="TUS = 0.2">TUS = 0.2, if the building is located in the SFHA</option>
+                  <option value="TUS = 0.1">TUS = 0.1, for outside SFHA with sewer backup prevention regulations</option>
                 </optgroup>
                 <optgroup label="TUB • Barrier, levee or floodwall">
-                  <option value="TUB = 0.8">TUB = 0.8</option>
-                  <option value="TUB = 0.4">TUB = 0.4</option>
+                  <option value="TUB = 0.8">TUB = 0.8, if professionally designed and constructed with drainage provisions</option>
+                  <option value="TUB = 0.4">TUB = 0.4, if not designed by a registered design professional but includes drainage provisions</option>
                 </optgroup>
                 <optgroup label="TUC • Channel modification, storm sewer improvements, diversions">
-                  <option value="TUC = 0.8">TUC = 0.8</option>
-                  <option value="TUC = 0.7">TUC = 0.7</option>
+                  <option value="TUC = 0.8">TUC = 0.8, if design provides at least 1 ft clearance from flood protection level to obstructions</option>
+                  <option value="TUC = 0.7">TUC = 0.7, for pump systems and all other cases</option>
                 </optgroup>
                 <optgroup label="TUF • Storage facilities">
-                  <option value="TUF 0.8">TUF 0.8</option>
+                  <option value="TUF 0.8">TUF = 0.8, for all flood water storage facilities</option>
                 </optgroup>
               </select>
               <details class="mt-2">
-                <summary class="text-primary small">Scoring Guide</summary>
-                <table class="table table-sm table-bordered table-dark small">
+                <summary class="text-primary small">More info</summary>
+                <table class="table table-sm table-bordered small">
                   <tbody>
                     <tr>
-                      <th scope="row" colspan="2">TUE  Elevation</th>
+                      <th scope="row">TUE  Elevation</th>
                       <td class="text-monospace">1.0</td>
+                      <td>TUE 1.0 if the building is elevated</td>
                     </tr>
                     <tr>
                       <th scope="row" rowspan="3">TUD  Dry floodproofing</th>
-                      <td>If the project was designed by a registered design professional and the design accounts for openings, internal drainage, seepage, and underdrainage</td>
                       <td class="text-monospace">0.6</td>
+                      <td>If the project was designed by a registered design professional and the design accounts for openings, internal drainage, seepage, and underdrainage</td>
                     </tr>
                     <tr>
-                      <td>If the project does not depend on human intervention to close openings; the project protects to a level less than 3 feet above the first floor; the design accounts for internal drainage, seepage, and underdrainage; and the building has no basement (i.e., any floor below grade on all sides).</td>
                       <td class="text-monospace">0.4</td>
+                      <td>If the project does not depend on human intervention to close openings; the project protects to a level less than 3 feet above the first floor; the design accounts for internal drainage, seepage, and underdrainage; and the building has no basement (i.e., any floor below grade on all sides).</td>
                     </tr>
                     <tr>
-                      <td>For all other cases, including those for which there is no documentation of how openings, interior drainage, seepage, or underdrainage are handled</td>
                       <td class="text-monospace">0.2</td>
+                      <td>For all other cases, including those for which there is no documentation of how openings, interior drainage, seepage, or underdrainage are handled</td>
                     </tr>
                     <tr>
                       <th scope="row" rowspan="3">TUW  Wet floodproofing</th>
-                      <td>If the project was designed by a registered design professional.</td>
                       <td class="text-monospace">0.5</td>
+                      <td>If the project was designed by a registered design professional.</td>
                     </tr>
                     <tr>
-                      <td>If the project was not designed by a registered design professional.</td>
                       <td class="text-monospace">0.3</td>
+                      <td>If the project was not designed by a registered design professional.</td>
                     </tr>
                     <tr>
-                      <td>If the furnace, water heater, electrical breaker box, and other utilities are relocated above flood level.</td>
                       <td class="text-monospace">0.2</td>
+                      <td>If the furnace, water heater, electrical breaker box, and other utilities are relocated above flood level.</td>
                     </tr>
                     <tr>
                       <th scope="row" rowspan="2">TUS  Sewer backup</th>
-                      <td>If the building is located in the SFHA.</td>
                       <td class="text-monospace">0.2</td>
+                      <td>If the building is located in the SFHA.</td>
                     </tr>
                     <tr>
-                      <td>For sewer backup prevention measures if the building is located outside of the SFHA and the community has a building code or other regulations that require positive drain sewers or other measures that prevent sewer backup into new buildings.</td>
                       <td class="text-monospace">0.1</td>
+                      <td>For sewer backup prevention measures if the building is located outside of the SFHA and the community has a building code or other regulations that require positive drain sewers or other measures that prevent sewer backup into new buildings.</td>
                     </tr>
                     <tr>
                       <th scope="row" rowspan="2">TUB  Barrier, levee or floodwall</th>
-                      <td>If the barrier was designed, and the construction approved by a registered design professional, and the design accounts for interior drainage, seepage, and underdrainage.</td>
                       <td class="text-monospace">0.8</td>
+                      <td>If the barrier was designed, and the construction approved by a registered design professional, and the design accounts for interior drainage, seepage, and underdrainage.</td>
                     </tr>
                     <tr>
-                      <td>If the barrier was not designed by a registered design professional, but the design accounts for interior drainage, seepage, and underdrainage.</td>
                       <td class="text-monospace">0.4</td>
+                      <td>If the barrier was not designed by a registered design professional, but the design accounts for interior drainage, seepage, and underdrainage.</td>
                     </tr>
                     <tr>
                       <th scope="row" rowspan="2">TUC  Channel modification, storm sewer improvements, diversions</th>
+                      <td class="text-monospace">0.8</td>
                       <td>If the project design provides at least one foot of clearance between the flood protection level and bridge decks, top of pipe, and other obstructions.</td>
-                      <td class="text-monospace">0.8</td>
                     </tr>
                     <tr>
-                      <td>For pump systems and all other cases.</td>
                       <td class="text-monospace">0.7</td>
+                      <td>For pump systems and all other cases.</td>
                     </tr>
                     <tr>
-                      <th scope="row" colspan="2">TUF  Storage facilities</th>
+                      <th scope="row">TUF  Storage facilities</th>
                       <td class="text-monospace">0.8</td>
+                      <td>TUF 0.8 for all flood water storage facilities</td>
                     </tr>
                   </tbody>
                 </table>
@@ -517,6 +519,7 @@ fpcccitems:
               id="formGroupExampleInput"
               placeholder="Enter a number"
             />
+            {% include "partials/fpp-fpb-details.liquid" %}
           </fieldset>
           <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>FPB (Pre-Project)</legend>
@@ -528,6 +531,7 @@ fpcccitems:
               id="formGroupExampleInput2"
               placeholder="Enter a number"
             />
+            {% include "partials/fpp-fpb-details.liquid" %}
           </fieldset>
         </div>
         <div class="modal-footer">
@@ -565,5 +569,16 @@ fpcccitems:
       // Listen for changes in dropdown selection
       select.addEventListener("change", updateView);
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      $('#modal-530').on('hidden.bs.modal', function () {
+        this.querySelectorAll('details[open]').forEach(detail => {
+          detail.removeAttribute('open');
+        });
+      });
+    });
+
+  </script>
+
   </script>
 {% endblock %}
