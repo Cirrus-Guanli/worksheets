@@ -412,7 +412,7 @@ fpcccitems:
                     <tr>
                       <th scope="row">TUE  Elevation</th>
                       <td class="text-monospace">1.0</td>
-                      <td>TUE 1.0 if the building is elevated</td>
+                      <td>If the building is elevated</td>
                     </tr>
                     <tr>
                       <th scope="row" rowspan="3">TUD  Dry floodproofing</th>
@@ -470,7 +470,7 @@ fpcccitems:
                     <tr>
                       <th scope="row">TUF  Storage facilities</th>
                       <td class="text-monospace">0.8</td>
-                      <td>TUF 0.8 for all flood water storage facilities</td>
+                      <td>For all flood water storage facilities</td>
                     </tr>
                   </tbody>
                 </table>
@@ -572,8 +572,28 @@ fpcccitems:
 
     document.addEventListener("DOMContentLoaded", function () {
       $('#modal-530').on('hidden.bs.modal', function () {
+        // Close any open <details>
         this.querySelectorAll('details[open]').forEach(detail => {
           detail.removeAttribute('open');
+        });
+
+        // Clear inputs (text, checkbox, radio, etc.)
+        this.querySelectorAll('input').forEach(input => {
+          if (input.type === 'checkbox' || input.type === 'radio') {
+            input.checked = false;
+          } else {
+            input.value = '';
+          }
+        });
+
+        // Also clear textareas
+        this.querySelectorAll('textarea').forEach(textarea => {
+          textarea.value = '';
+        });
+
+        // Reset selects
+        this.querySelectorAll('select').forEach(select => {
+          select.selectedIndex = 0;
         });
       });
     });
