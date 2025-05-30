@@ -1,6 +1,8 @@
 :root {
   --primary_blue: #024774;
+  --bg-bg-gray: #f3f5f7;
   --ltblue: #f2f8ff;
+  --bs-table-bg: #f2f8ff;
   --purple: #511d9a;
   --darkpurple: #3d1377;
   --yellow-highlight: #fafad2;
@@ -23,6 +25,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
 #brand svg {
   width: 42px;
@@ -78,10 +81,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 1039; /* Bootstrap Modal uses 1040 */
-  background-color: var(--ltblue);
 }
 .worksheet-table thead th {
-  border-bottom-style: none;
   outline: 0.5px solid #dee2e6;
   vertical-align: middle;
 }

@@ -1,0 +1,5 @@
+{
+  "slug": "prereqs",
+  "tags": ["prereqs"],
+  "layout": "layouts/example.liquid"
+}

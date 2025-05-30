@@ -10,6 +10,16 @@ eleventyExcludeFromCollections: true
 <div class="container-fluid my-3">
 
 <section class="mb-5">
+  <h2>Prerequisites</h2>
+  <dl>
+      <dt class="mb-1" id="{{ group.name | slugify }}">
+        Prerequisites
+      </dt>
+      <dd class="ps-3"><a href="/examples/prereqs">Prerequisites</a></dd>
+  </dl>
+</section>
+
+<section class="mb-5">
   <h2>Worksheets</h2>
   <dl>
     {% assign worksheetGroup = collections.worksheets | group_by: "data.sheet_type" | sort: "data.title" %}
@@ -18,7 +28,7 @@ eleventyExcludeFromCollections: true
         {{ group.name |  capitalize }}
       </dt>
       {% for page in group.items %}
-        <dd class="pl-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
+        <dd class="ps-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
       {% endfor %}
     {% endfor %}
   </dl>
@@ -31,7 +41,7 @@ eleventyExcludeFromCollections: true
       502 / 503 Errors
     </dt>
     {% for page in collections.errors %}
-      <dd class="pl-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
+      <dd class="ps-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
     {% endfor %}
   </dl>
 </section>

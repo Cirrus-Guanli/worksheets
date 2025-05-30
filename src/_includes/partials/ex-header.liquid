@@ -6,19 +6,21 @@
       </svg>
       <h1 class="mb-0 text-white">CRS Submit</h1>
     </a>
-    <div class="mr-4 ml-auto"><a class="text-white" href="#" id="feedback-button">Give Feedback</a></div>
-    <div class="dropdown">
-      <button class="btn-nope logout-dropdown" type="button" id="dropdownSort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="text-text-ph bg-bg-blue rounded-circle">
-          <span class="sr-only">User Actions</span>
-          <i class="material-icons text-secondary">person</i>
-        </span>
-        <i class="material-icons text-bg-blue">keyboard_arrow_down</i>
-      </button>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSort">
-        <a href="#" class="dropdown-item" id="fontToggle" onclick="toggleFontSize()" class="dropdown-item">Switch to Normal Text</a>
-        <div class="dropdown-divider"></div>
-        <a href="/" class="dropdown-item">Logout</a>
+    <div class="d-flex align-items-center gap-3">
+      <a class="text-white" href="#" id="feedback-button" style="text-decoration:none;">Give Feedback</a>
+      <div class="dropdown">
+        <button class="btn-nope logout-dropdown" type="button" id="dropdownSort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="text-text-ph bg-bg-blue rounded-circle">
+            <span class="visually-hidden">User Actions</span>
+            <i class="material-icons text-secondary">person</i>
+          </span>
+          <i class="material-icons text-bg-blue">keyboard_arrow_down</i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSort">
+          <a href="#" class="dropdown-item" id="fontToggle" onclick="toggleFontSize()" class="dropdown-item">Switch to Normal Text</a>
+          <div class="dropdown-divider"></div>
+          <a href="/" class="dropdown-item">Logout</a>
+        </div>
       </div>
     </div>
 </div>

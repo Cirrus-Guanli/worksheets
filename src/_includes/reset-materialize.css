@@ -45,3 +45,11 @@ td, th {
 .row {
   margin-bottom: unset;
 }
+select {
+  height: unset;
+  border: unset;
+  background-color: unset;
+  padding: unset;
+  border-radius: unset;
+  width: unset;
+}

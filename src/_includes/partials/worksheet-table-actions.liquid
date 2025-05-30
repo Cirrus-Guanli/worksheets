@@ -1,21 +1,5 @@
 <div class="row justify-content-between align-items-center mb-2">
-  {% if title == '530Credit • Flood Protection Credit Worksheet' %}
-    <div class="col-md-4 order-md-2 mb-3 mb-md-0">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-auto">
-          bSF = <mark style="background-color:yellow">500</mark>
-        </div>
-        <div class="col-auto d-flex align-items-center">
-          <h6 class="mb-0 mr-1 text-right">Option:</h6>
-          <select id="530select" class="form-control form-control-sm" style="flex-basis:content">
-            <option value="1">1</option>
-            <option value="2">2</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  {% endif %}
-  <div class="col-md-4 col-8">
+  <div class="col">
   {% if sheet_type == "modal" %}
     {% if title == '530Credit • Flood Protection Credit Worksheet' %}
       <button
@@ -41,7 +25,21 @@
     <button class="btn btn-sm btn-link text-danger" data-toggle="modal"
     data-target="#exampleModal3">Delete All</button>
   </div>
-  <div class="col-md-4 col-4 order-md-3 text-right">
+  {% if title == '530Credit • Flood Protection Credit Worksheet' %}
+    <div class="col d-flex justify-content-center align-items-center gap-3 mb-3 mb-md-0">
+      <div class="">
+        bSF = <mark style="background-color:yellow">500</mark>
+      </div>
+      <div class="d-flex align-items-center gap-1">
+        <h6 class="mb-0 mr-1 text-right">Option:</h6>
+        <select id="530select" class="browser-default form-select form-select-sm" aria-label="Default select example">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+    </div>
+  {% endif %}
+  <div class="col d-flex justify-content-end">
     <i class="material-icons material-symbols-outlined text-black-50" title="Print">print</i>
   </div>
 </div>

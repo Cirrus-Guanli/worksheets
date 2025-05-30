@@ -236,21 +236,21 @@ fpcccitems:
 ---
 
 <table id="table-1" class="table table-sm table-bordered table-hover worksheet-table mb-0 active">
-  <caption class="sr-only">
+  <caption class="visually-hidden">
     {{
       title
     }}
   </caption>
   <thead>
     <tr>
-      <th class="text-center">Actions</th>
-      <th class="text-center">Bldg #</th>
-      <th>Address</th>
-      <th class="text-center">FMA Grant?</th>
-      <th class="text-center">TU_ <br>(Technique Used)</th>
-      <th>Building Type</th>
-      <th class="text-center">No. of Buildings</th>
-      <th class="text-center" style="width:min-content;">No. of Buildings w/ FMA Multiplier and TU</th>
+      <th class="bg-bg-blue text-center">Actions</th>
+      <th class="bg-bg-blue text-center">Bldg #</th>
+      <th class="bg-bg-blue">Address</th>
+      <th class="bg-bg-blue text-center">FMA Grant?</th>
+      <th class="bg-bg-blue text-center">TU_ <br>(Technique Used)</th>
+      <th class="bg-bg-blue">Building Type</th>
+      <th class="bg-bg-blue text-center">No. of Buildings</th>
+      <th class="bg-bg-blue text-center" style="width:min-content;">No. of Buildings w/ FMA Multiplier and TU</th>
     </tr>
   </thead>
   <tbody>
@@ -277,25 +277,25 @@ fpcccitems:
 </table>
 
 <table id="table-2" class="table table-sm table-bordered table-hover worksheet-table mb-0 active">
-  <caption class="sr-only">
+  <caption class="visually-hidden">
     {{
       title
     }}
   </caption>
   <thead>
     <tr>
-      <th class="text-center">Actions</th>
-      <th class="text-center">Bldg #</th>
-      <th>Address</th>
-      <th class="text-center">FMA Grant?</th>
-      <th class="text-center">FPP<br>(Post-Project)</th>
-      <th class="text-center">FPB<br>(Pre-Project)</th>
-      <th class="text-center">FPI<br>(FPP - FBP)</th>
-      <th class="text-center">TU_ <br>(Technique Used)</th>
-      <th class="text-center">PB<br>(TU x FPI)</th>
-      <th>Building Type</th>
-      <th class="text-center">No. of Buildings</th>
-      <th class="text-center" style="width:min-content;">PB w/ FMA Multiplier</th>
+      <th class="bg-bg-blue text-center">Actions</th>
+      <th class="bg-bg-blue text-center">Bldg #</th>
+      <th class="bg-bg-blue">Address</th>
+      <th class="bg-bg-blue text-center">FMA Grant?</th>
+      <th class="bg-bg-blue text-center">FPP<br>(Post-Project)</th>
+      <th class="bg-bg-blue text-center">FPB<br>(Pre-Project)</th>
+      <th class="bg-bg-blue text-center">FPI<br>(FPP - FBP)</th>
+      <th class="bg-bg-blue text-center">TU_ <br>(Technique Used)</th>
+      <th class="bg-bg-blue text-center">PB<br>(TU x FPI)</th>
+      <th class="bg-bg-blue">Building Type</th>
+      <th class="bg-bg-blue text-center">No. of Buildings</th>
+      <th class="bg-bg-blue text-center" style="width:min-content;">PB w/ FMA Multiplier</th>
     </tr>
   </thead>
   <tbody>
@@ -351,7 +351,7 @@ fpcccitems:
         <div class="modal-body">
           <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>Address</legend>
-            <label for="formGroupExampleInput" class="sr-only"
+            <label for="formGroupExampleInput" class="visually-hidden"
               >Address</label
             >
             <input
@@ -363,7 +363,7 @@ fpcccitems:
           </fieldset>
           <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>FMA Grant?</legend>
-            <label for="formGroupExampleInput2" class="sr-only"
+            <label for="formGroupExampleInput2" class="visually-hidden"
               >FMA Grant?</label
             >
             <select class="custom-select">
@@ -373,7 +373,7 @@ fpcccitems:
           </fieldset>
           <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>TU_ (Technique Used)</legend>
-            <label for="formGroupExampleInput2" class="sr-only">TU (Technique Used)</label>
+            <label for="formGroupExampleInput2" class="visually-hidden">TU (Technique Used)</label>
               <select class="custom-select">
                 <option value="" selected disabled>-- select --</option>
                 <optgroup label="TUE • Elevation">
@@ -479,7 +479,7 @@ fpcccitems:
           <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>Building Type</legend>
             <div class="form-group mb-0">
-              <label for="formGroupExampleInput2" class="sr-only">Building Type</label>
+              <label for="formGroupExampleInput2" class="visually-hidden">Building Type</label>
               <select class="custom-select">
                 <option disabled selected value> -- select -- </option>
                 <option value="Regular building in the SFHA">Regular building in the SFHA</option>
@@ -497,7 +497,7 @@ fpcccitems:
           </fieldset>
           <fieldset class="border mb-4 px-3 pb-3 pt-1">
             <legend>No. of Buildings</legend>
-            <label for="formGroupExampleInput2" class="sr-only">No. of Buildings</label>
+            <label for="formGroupExampleInput2" class="visually-hidden">No. of Buildings</label>
             <input
               type="text"
               inputmode="numeric"
@@ -509,7 +509,7 @@ fpcccitems:
           <h5 class="px-3 mb-3 text-danger">**Option 2 Only</h5>
           <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>FPP (Post-Project)</legend>
-            <label for="formGroupExampleInput" class="sr-only"
+            <label for="formGroupExampleInput" class="visually-hidden"
               >FPP (Post-Project)</label
             >
             <input
@@ -523,7 +523,7 @@ fpcccitems:
           </fieldset>
           <fieldset class="border mb-2 px-3 pb-3 pt-1">
             <legend>FPB (Pre-Project)</legend>
-            <label for="formGroupExampleInput2" class="sr-only">FPB (Pre-Project)</label>
+            <label for="formGroupExampleInput2" class="visually-hidden">FPB (Pre-Project)</label>
             <input
               type="text"
               inputmode="numeric"
