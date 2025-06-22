@@ -1,0 +1,25 @@
+<div class="bg-bg-blue p-3 border-bottom border-gray">
+  <div class="user">
+    <div class="name">
+      <h1>
+        Welcome,
+        <div
+          class="d-inline ng-binding"
+          ng-bind="(vm.appInfo.firstName + ' ' + vm.appInfo.lastName)"
+        >
+          Steve Bailey
+        </div>
+      </h1>
+      <div class="d-flex text-text-ph">
+        <div ng-if="vm.appInfo.phoneNumber" class="ng-scope">
+          <i class="mini material-icons d-inline-flex align-middle mr-1"
+            >phone</i
+          >
+          <div class="d-inline ng-binding" ng-bind="(vm.appInfo.phoneNumber)">
+            (123) 456-7890
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

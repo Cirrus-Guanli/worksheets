@@ -1,0 +1,94 @@
+---
+permalink: /examples/admin-email/index.html
+title: Admin Email Notifications Settings
+forms:
+  - name: Assigned for Review
+    bcc:
+      - steve@verisk.com
+    cc:
+      - r.dawson@cognetix.net
+  - name: Tech Review Rejected
+    bcc:
+      - simon.baker@analytiq.com
+      - jordan@quantivus.com
+    cc:
+      - emily.chen@verisk.com
+      - daniel.roth@cleardatahub.org
+  - name: Final Submit
+    bcc:
+      - rachel.tan@vizlogix.com
+      - keisha.singh@metriclane.com
+    cc:
+      - david.lee@deepintel.co
+      - barbara.long@comcast.net
+      - alicia.nguyen@acmeanalytics.io
+  - name: DataViz
+    bcc:
+      - alex.ramirez@trendex.io
+      - o.connor@strategiqdata.org
+      - chris@aol.com
+    cc:
+---
+
+{% include "partials/header.liquid" %}
+{% include "partials/admin-subheader.html" %}
+
+<div style="height: calc(100% - 163px);" ui-view="" class="ng-scope">
+  <div id="landing" style="display:grid;grid-template-areas:'sidebar main';grid-template-columns: auto 1fr;">
+    {% include "partials/admin-sidebar.html" %}
+    <div style="grid-area:main;" class="py-3 px-4">
+      <h2 class="mt-3">{{ title }}</h2>
+      <hr class="mb-3">
+      {% for item in forms %}
+        <details class="bg-white border rounded{% unless forloop.last %} mb-3{% endunless %}">
+          <summary class="d-flex flex-column justify-content-between flex-lg-row align-items-center py-2 px-3 rounded-top" data-bs-toggle="collapse"
+            href="#{{ item.name | slugify }}" role="button" aria-expanded="false" aria-controls="{{ item.name | slugify }}">
+            <h6 class="mb-0">{{ item.name }} <small class="badge bg-secondary ms-2 ng-binding">{{ item.bcc.size | plus: item.cc.size }} Recipients</small></h6>
+            <div class="text-text-ph">
+              <i class="small material-icons d-inline-flex align-middle">expand_more</i>
+            </div>
+          </summary>
+          <div id="{{ item.name | slugify }}" class="collapse border-top p-4">
+            <form>
+              <fieldset class="mb-3">
+                <label for="bcc-recipients{{ forloop.index }}" class="text-reset fs-6 fw-bold mb-1">BCC List</label>
+                <div class="border p-3">
+                  {% if item.bcc.size > 0 %}
+                    <div class="d-grid gap-2 d-md-block">
+                      {% for recipient in item.bcc %}
+                        <button type="button" class="btn btn-light">
+                          <span>{{ recipient }}</span>
+                          <span class="remove fw-bold" ng-click="removeEmail(event.bcc, $index)">×</span>
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <input type="email" class="form-control mb-0" id="bcc-recipients{{ forloop.index }}" aria-describedby="emailHelp" placeholder="Add...">
+                </div>
+              </fieldset>
+              <fieldset class="mb-3">
+                <label for="cc-recipients{{ forloop.index }}" class="text-reset fs-6 fw-bold mb-1">CC List</label>
+                <div class="border p-3">
+                  {% if item.cc.size > 0 %}
+                    <div class="d-grid gap-2 d-md-block">
+                      {% for recipient in item.cc %}
+                        <button type="button" class="btn btn-light">
+                          <span>{{ recipient }}</span>
+                          <span class="remove" ng-click="removeEmail(event.cc, $index)">×</span>
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <input type="email" class="form-control mb-0" id="cc-recipients{{ forloop.index }}" aria-describedby="emailHelp" placeholder="Add...">
+                </div>
+              </fieldset>
+              <p class="form-text ng-binding">
+                Emails will receive notification when the {{ item.name }} is completed.
+              </p>
+            </form>
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</div>

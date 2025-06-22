@@ -51,6 +51,9 @@ body {
 .text-secondary {
   color: #024774 !important;
 }
+.text-text-secondary {
+  color: rgba(0,0,0,0.55) !important;
+}
 .bg-bg-blue {
   background-color: var(--ltblue) !important;
 }
@@ -134,3 +137,31 @@ tr:focus-within {
   background-color: white;
 }
 
+
+/* ADMIN MENU */
+
+.sidebar ul:not(.collapsible) li {
+  position: relative;
+}
+
+.sidebar ul:not(.collapsible) .active::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #f7b500;
+}
+
+details[open] summary {
+  background-color: var(--ltblue);
+}
+
+details[open] summary .material-icons {
+  transition: transform 0.25s ease-in-out;
+  transform: rotate(-180deg);
+}

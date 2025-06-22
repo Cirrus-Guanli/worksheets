@@ -5,45 +5,55 @@ title: CRS Score Worksheets
 eleventyExcludeFromCollections: true
 ---
 
-  {% include "partials/header.liquid" %}
+{% include "partials/header.liquid" %}
 
 <div class="container-fluid my-3">
 
-<section class="mb-5">
-  <h2>Prerequisites</h2>
-  <dl>
-      <dt class="mb-1" id="{{ group.name | slugify }}">
-        Prerequisites
-      </dt>
-      <dd class="ps-3"><a href="/examples/prereqs">Prerequisites</a></dd>
-  </dl>
-</section>
+  <section class="mb-4">
+    <h2>Admin</h2>
+    <dl>
+        <dt class="mb-1" id="{{ group.name | slugify }}">
+          Settings
+        </dt>
+        <dd class="ps-3"><a href="/examples/admin-email/">Email Notifications</a></dd>
+    </dl>
+  </section>
 
-<section class="mb-5">
-  <h2>Worksheets</h2>
-  <dl>
-    {% assign worksheetGroup = collections.worksheets | group_by: "data.sheet_type" | sort: "data.title" %}
-    {% for group in worksheetGroup %}
-      <dt class="mb-1" id="{{ group.name | slugify }}">
-        {{ group.name |  capitalize }}
+  <section class="mb-4">
+    <h2>Prerequisites</h2>
+    <dl>
+        <dt class="mb-1" id="{{ group.name | slugify }}">
+          Prerequisites
+        </dt>
+        <dd class="ps-3"><a href="/examples/prereqs">Prerequisites</a></dd>
+    </dl>
+  </section>
+
+  <section class="mb-4">
+    <h2>Worksheets</h2>
+    <dl>
+      {% assign worksheetGroup = collections.worksheets | group_by: "data.sheet_type" | sort: "data.title" %}
+      {% for group in worksheetGroup %}
+        <dt class="mb-1" id="{{ group.name | slugify }}">
+          {{ group.name |  capitalize }}
+        </dt>
+        {% for page in group.items %}
+          <dd class="ps-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
+        {% endfor %}
+      {% endfor %}
+    </dl>
+  </section>
+
+  <section class="mb-4">
+    <h2>Errors</h2>
+    <dl>
+      <dt class="mb-1">
+        502 / 503 Errors
       </dt>
-      {% for page in group.items %}
+      {% for page in collections.errors %}
         <dd class="ps-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
       {% endfor %}
-    {% endfor %}
-  </dl>
-</section>
-
-<section class="mb-5">
-  <h2>Errors</h2>
-  <dl>
-    <dt class="mb-1">
-      502 / 503 Errors
-    </dt>
-    {% for page in collections.errors %}
-      <dd class="ps-3"><a href="{{ page.url }}">{{ page.data.title }}</a></dd>
-    {% endfor %}
-  </dl>
-</section>
+    </dl>
+  </section>
 
 </div>

@@ -1,0 +1,5 @@
+{
+  "slug": "admin",
+  "tags": ["admin"],
+  "layout": "layouts/base.liquid"
+}
