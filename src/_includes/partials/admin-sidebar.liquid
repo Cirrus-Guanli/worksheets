@@ -1,0 +1,16 @@
+
+<ul class="flex-grow h-100 overflow-hidden">
+  {% for item in adminMenuItems %}
+    <li class="border-bottom border-gray{% if item.slug == 'emailNotifications' %} active{% endif %}">
+      <a
+        class="title d-flex flex-column px-3 text-decoration-none text-center my-3 text-text-secondary mx-auto"
+        href="/"
+        ng-class="vm.isActive('{{ item.slug }}')"
+      >
+        <i class="material-icons{% if item.slug == 'emailNotifications' %} text-secondary{% endif %}">{{ item.icon }}</i>
+        {{ item.title | replace: ' ', '<br>' }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+

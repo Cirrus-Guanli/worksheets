@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Communities",
+    "slug": "communities",
+    "icon": "diversity_3"
+  },
+  {
+    "title": "Users",
+    "slug": "users",
+    "icon": "person"
+  },
+  {
+    "title": "Assign Reviewers",
+    "slug": "assignReviewers",
+    "icon": "assignment_add"
+  },
+  {
+    "title": "Reviews",
+    "slug": "reviews",
+    "icon": "article"
+  },
+  {
+    "title": "File Mover",
+    "slug": "file-mover",
+    "icon": "drive_file_move"
+  },
+  {
+    "title": "Scorecard ",
+    "slug": "scorecard",
+    "icon": "scoreboard"
+  },
+  {
+    "title": "Archived Certs",
+    "slug": "archivedCertfications",
+    "icon": "card_membership"
+  },
+  {
+    "title": "Notification Settings",
+    "slug": "emailNotifications",
+    "icon": "mail"
+  }
+]

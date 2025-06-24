@@ -57,6 +57,16 @@ body {
 .bg-bg-blue {
   background-color: var(--ltblue) !important;
 }
+.btn-secondary {
+  color: #fff;
+  background-color: #024774;
+  border-color: #024774;
+}
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #01304e;
+  border-color: #012842;
+}
 .btn-nope {
   text-shadow: 0 0 0 transparent;
   background: transparent;
@@ -139,6 +149,22 @@ tr:focus-within {
 
 
 /* ADMIN MENU */
+
+#landing {
+  display: grid;
+  grid-template-areas: 'sidebar main';
+  grid-template-columns: auto 1fr;
+}
+
+.admin--main {
+  grid-area: main;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  background-color: var(--bg-bg-gray)
+}
 
 .sidebar ul:not(.collapsible) li {
   position: relative;
